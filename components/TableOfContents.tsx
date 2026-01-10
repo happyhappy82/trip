@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 interface TocItem {
   id: string;
   text: string;
-  level: number;
 }
 
 export default function TableOfContents() {
@@ -13,16 +12,15 @@ export default function TableOfContents() {
   const [activeId, setActiveId] = useState<string>("");
 
   useEffect(() => {
-    const headings = document.querySelectorAll("article h2, article h3");
+    const headings = document.querySelectorAll("article h2");
     const items: TocItem[] = [];
 
     headings.forEach((heading) => {
       const id = heading.id || heading.textContent?.toLowerCase().replace(/\s+/g, "-") || "";
       const text = heading.textContent || "";
-      const level = parseInt(heading.tagName.substring(1));
 
       if (id && text) {
-        items.push({ id, text, level });
+        items.push({ id, text });
       }
     });
 
@@ -38,34 +36,40 @@ export default function TableOfContents() {
           }
         });
       },
-      { rootMargin: "-80px 0px -80% 0px" }
+      { rootMargin: "-100px 0px -70% 0px" }
     );
 
-    const headings = document.querySelectorAll("article h2, article h3");
+    const headings = document.querySelectorAll("article h2");
     headings.forEach((heading) => observer.observe(heading));
 
     return () => observer.disconnect();
   }, [toc]);
 
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault();
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   if (toc.length === 0) return null;
 
   return (
-    <nav className="sticky top-8">
+    <nav className="sticky top-24">
       <div className="border-l-2 border-gray-200 pl-4">
-        <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">
+        <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">
           목차
         </p>
-        <ul className="space-y-2">
+        <ul className="space-y-3">
           {toc.map((item) => (
-            <li
-              key={item.id}
-              style={{ paddingLeft: `${(item.level - 2) * 0.75}rem` }}
-            >
+            <li key={item.id}>
               <a
                 href={`#${item.id}`}
-                className={`block text-sm leading-relaxed transition-colors ${
+                onClick={(e) => handleClick(e, item.id)}
+                className={`block text-sm leading-relaxed transition-colors duration-200 ${
                   activeId === item.id
-                    ? "text-emerald-600 font-medium"
+                    ? "text-emerald-600 font-medium border-l-2 border-emerald-600 -ml-[18px] pl-4"
                     : "text-gray-500 hover:text-gray-900"
                 }`}
               >

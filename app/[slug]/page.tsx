@@ -41,11 +41,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: trip.title,
       description: trip.excerpt,
       url: url,
-      siteName: "여행 정보 가이드",
+      siteName: "더트립가이드",
       locale: "ko_KR",
       type: "article",
       publishedTime: trip.date,
-      authors: ["여행 정보 가이드"],
+      authors: ["더트립가이드"],
     },
     twitter: {
       card: "summary_large_image",
@@ -72,11 +72,11 @@ export default async function TripPage({ params }: Props) {
     headline: trip.title,
     author: {
       "@type": "Organization",
-      name: "여행 정보 가이드",
+      name: "더트립가이드",
     },
     publisher: {
       "@type": "Organization",
-      name: "여행 정보 가이드",
+      name: "더트립가이드",
     },
     datePublished: trip.date,
     description: trip.excerpt,
@@ -85,9 +85,9 @@ export default async function TripPage({ params }: Props) {
   return (
     <>
       <Header />
-      <div className="lg:flex lg:gap-8">
+      <div className="relative">
         {/* Main Content */}
-        <article className="lg:flex-1 lg:max-w-2xl">
+        <article className="max-w-3xl">
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(tripSchema) }}
@@ -113,12 +113,12 @@ export default async function TripPage({ params }: Props) {
                 h2: ({ node, ...props }) => {
                   const text = props.children?.toString() || "";
                   const id = text.toLowerCase().replace(/\s+/g, "-");
-                  return <h2 id={id} {...props} />;
+                  return <h2 id={id} className="scroll-mt-24" {...props} />;
                 },
                 h3: ({ node, ...props }) => {
                   const text = props.children?.toString() || "";
                   const id = text.toLowerCase().replace(/\s+/g, "-");
-                  return <h3 id={id} {...props} />;
+                  return <h3 id={id} className="scroll-mt-24" {...props} />;
                 },
               }}
             >
@@ -129,8 +129,8 @@ export default async function TripPage({ params }: Props) {
           <QnA items={qnaItems} />
         </article>
 
-        {/* Sidebar TOC */}
-        <aside className="hidden lg:block lg:w-64 lg:flex-shrink-0">
+        {/* Sidebar TOC - Fixed position on right */}
+        <aside className="hidden xl:block fixed top-24 right-8 w-56">
           <TableOfContents />
         </aside>
       </div>
