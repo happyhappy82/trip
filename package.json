@@ -1,0 +1,40 @@
+{
+  "name": "tripinfolab",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3006",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@mdx-js/loader": "^3.1.1",
+    "@mdx-js/react": "^3.1.1",
+    "@next/mdx": "^15.5.9",
+    "@notionhq/client": "^2.3.0",
+    "@tailwindcss/typography": "^0.5.19",
+    "autoprefixer": "^10.4.23",
+    "critters": "^0.0.20",
+    "googleapis": "^128.0.0",
+    "gray-matter": "^4.0.3",
+    "next": "^15.5.9",
+    "notion-to-md": "^3.1.9",
+    "postcss": "^8.5.6",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "react-markdown": "^9.1.0",
+    "reading-time": "^1.5.0",
+    "remark-gfm": "^4.0.1",
+    "tailwindcss": "^3.4.19"
+  },
+  "devDependencies": {
+    "@types/mdx": "^2.0.13",
+    "@types/node": "^20.19.27",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "^15.5.9",
+    "typescript": "^5.9.3"
+  }
+}
