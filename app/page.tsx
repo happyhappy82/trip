@@ -8,8 +8,8 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main>
-        <div className="relative -top-[10px] flex flex-col gap-8">
+      <main className="max-w-2xl mx-auto">
+        <div className="flex flex-col gap-8">
           {trips.length === 0 ? (
             <p>No trips yet. Create your first trip in content/trips/</p>
           ) : (
