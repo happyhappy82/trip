@@ -1,5 +1,6 @@
 const { Client } = require('@notionhq/client');
 const { NotionToMarkdown } = require('notion-to-md');
+const { slugify } = require('transliteration');
 const fs = require('fs');
 const path = require('path');
 const https = require('https');
@@ -21,12 +22,11 @@ if (!fs.existsSync(IMAGES_DIR)) {
 }
 
 function generateSlug(title) {
-  return title
-    .toLowerCase()
-    .replace(/[^a-z0-9가-힣\s-]/g, '')
-    .replace(/\s+/g, '-')
-    .replace(/-+/g, '-')
-    .trim();
+  return slugify(title, {
+    lowercase: true,
+    separator: '-',
+    replace: [[/[?!]/g, '']],
+  });
 }
 
 function downloadImage(url, filepath) {
