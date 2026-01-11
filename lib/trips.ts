@@ -47,7 +47,7 @@ export function getSortedTripsData(): Trip[] {
       const { data, content } = matter(fileContents);
 
       return {
-        slug,
+        slug: data.slug || slug,
         title: data.title || '',
         date: data.date || '',
         excerpt: data.excerpt || extractExcerpt(content),
@@ -69,24 +69,53 @@ export function getSortedTripsData(): Trip[] {
 }
 
 export function getTripBySlug(slug: string): Trip | null {
+  // First try direct file match
   const fullPath = path.join(tripsDirectory, `${slug}.md`);
 
-  if (!fs.existsSync(fullPath)) {
+  if (fs.existsSync(fullPath)) {
+    const fileContents = fs.readFileSync(fullPath, 'utf8');
+    const { data, content } = matter(fileContents);
+
+    return {
+      slug: data.slug || slug,
+      title: data.title || '',
+      date: data.date || '',
+      excerpt: data.excerpt || extractExcerpt(content),
+      content,
+      lightColor: data.lightColor || 'lab(62.926 59.277 -1.573)',
+      darkColor: data.darkColor || 'lab(80.993 32.329 -7.093)',
+      readingTime: readingTime(content).text,
+      notionPageId: data.notionPageId,
+    };
+  }
+
+  // Search by frontmatter slug
+  if (!fs.existsSync(tripsDirectory)) {
     return null;
   }
 
-  const fileContents = fs.readFileSync(fullPath, 'utf8');
-  const { data, content } = matter(fileContents);
+  const fileNames = fs.readdirSync(tripsDirectory);
+  for (const fileName of fileNames) {
+    if (!fileName.endsWith('.md')) continue;
 
-  return {
-    slug,
-    title: data.title || '',
-    date: data.date || '',
-    excerpt: data.excerpt || extractExcerpt(content),
-    content,
-    lightColor: data.lightColor || 'lab(62.926 59.277 -1.573)',
-    darkColor: data.darkColor || 'lab(80.993 32.329 -7.093)',
-    readingTime: readingTime(content).text,
-    notionPageId: data.notionPageId,
-  };
+    const filePath = path.join(tripsDirectory, fileName);
+    const fileContents = fs.readFileSync(filePath, 'utf8');
+    const { data, content } = matter(fileContents);
+
+    if (data.slug === slug) {
+      return {
+        slug: data.slug,
+        title: data.title || '',
+        date: data.date || '',
+        excerpt: data.excerpt || extractExcerpt(content),
+        content,
+        lightColor: data.lightColor || 'lab(62.926 59.277 -1.573)',
+        darkColor: data.darkColor || 'lab(80.993 32.329 -7.093)',
+        readingTime: readingTime(content).text,
+        notionPageId: data.notionPageId,
+      };
+    }
+  }
+
+  return null;
 }
