@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
-  const url = `https://tripinfolab.xyz/${slug}`;
+  const url = `https://www.thetripguide.xyz/${slug}/`;
 
   return {
     title: trip.title,
@@ -66,21 +66,71 @@ export default async function TripPage({ params }: Props) {
   const qnaItems = extractQnA(trip.content);
   const contentWithoutQnA = removeQnASection(trip.content);
 
-  const tripSchema = {
+  const baseUrl = "https://www.thetripguide.xyz";
+  const pageUrl = `${baseUrl}/${slug}/`;
+
+  // Article Schema (보완)
+  const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: trip.title,
+    description: trip.excerpt,
     author: {
       "@type": "Organization",
       name: "더트립가이드",
+      url: baseUrl,
     },
     publisher: {
       "@type": "Organization",
       name: "더트립가이드",
+      url: baseUrl,
+      logo: {
+        "@type": "ImageObject",
+        url: `${baseUrl}/og-image.png`,
+      },
     },
     datePublished: trip.date,
-    description: trip.excerpt,
+    dateModified: trip.date,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": pageUrl,
+    },
+    image: `${baseUrl}/og-image.png`,
   };
+
+  // BreadcrumbList Schema
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "홈",
+        item: baseUrl,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: trip.title,
+        item: pageUrl,
+      },
+    ],
+  };
+
+  // FAQPage Schema (Q&A가 있을 때만)
+  const faqSchema = qnaItems.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: qnaItems.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  } : null;
 
   return (
     <>
@@ -90,8 +140,18 @@ export default async function TripPage({ params }: Props) {
         <article className="max-w-3xl">
           <script
             type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(tripSchema) }}
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
           />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+          />
+          {faqSchema && (
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+            />
+          )}
 
           <div className="mb-8">
             <h1

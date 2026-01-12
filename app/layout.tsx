@@ -10,7 +10,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: "더트립가이드",
   description: "숨은 명소부터 맛집, 숙소까지 전 세계 모든 여행 정보를 한눈에 확인하고 당신만의 특별한 여정을 완성해 보세요.",
-  metadataBase: new URL("https://tripinfolab.xyz"),
+  metadataBase: new URL("https://www.thetripguide.xyz"),
   keywords: ["여행", "여행지 추천", "여행 팁", "숙소", "관광", "해외여행", "국내여행"],
   authors: [{ name: "더트립가이드" }],
   creator: "더트립가이드",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     description: "숨은 명소부터 맛집, 숙소까지 전 세계 모든 여행 정보를 한눈에 확인하고 당신만의 특별한 여정을 완성해 보세요.",
     type: "website",
     locale: "ko_KR",
-    url: "https://tripinfolab.xyz",
+    url: "https://www.thetripguide.xyz",
     siteName: "더트립가이드",
     images: [
       {
@@ -67,7 +67,7 @@ export default function RootLayout({
     "@type": "WebSite",
     "name": "더트립가이드",
     "alternateName": "더트립가이드",
-    "url": "https://tripinfolab.xyz",
+    "url": "https://www.thetripguide.xyz",
     "description": "숨은 명소부터 맛집, 숙소까지 전 세계 모든 여행 정보를 한눈에 확인하고 당신만의 특별한 여정을 완성해 보세요.",
   };
 
