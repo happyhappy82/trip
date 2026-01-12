@@ -44,12 +44,13 @@ jobs:
       - name: Check for changes
         id: check_changes
         run: |
-          if [ -z "$(git status --porcelain)" ]; then
+          if [ -z "$(git status --porcelain content/trips/ public/notion-images/)" ]; then
             echo "has_changes=false" >> $GITHUB_OUTPUT
-            echo "No changes detected"
+            echo "No changes detected in content/trips/ or public/notion-images/"
           else
             echo "has_changes=true" >> $GITHUB_OUTPUT
-            echo "Changes detected"
+            echo "Changes detected:"
+            git status --porcelain content/trips/ public/notion-images/
           fi
 
       - name: Configure Git
