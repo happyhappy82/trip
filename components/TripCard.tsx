@@ -31,7 +31,7 @@ export default function TripCard({
         >
           {title}
         </h2>
-        <p className="text-[13px] text-gray-700">{formatDate(date)}</p>
+        <time dateTime={date} className="text-[13px] text-gray-700">{formatDate(date)}</time>
         <p className="mt-1">{excerpt}</p>
       </article>
     </Link>
