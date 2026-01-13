@@ -7,7 +7,7 @@ export default function Home() {
 
   return (
     <>
-      <Header />
+      <Header isHome />
       <main className="max-w-2xl mx-auto">
         <div className="flex flex-col gap-8">
           {trips.length === 0 ? (
