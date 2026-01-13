@@ -2,11 +2,11 @@ const { google } = require('googleapis');
 
 async function submitToGoogle() {
   try {
-    const siteUrl = process.env.SITE_URL;
+    const siteUrl = 'https://www.thetripguide.xyz';
     const publishedSlug = process.env.PUBLISHED_SLUG;
     const serviceAccountJson = process.env.GOOGLE_SERVICE_ACCOUNT_JSON;
 
-    if (!siteUrl || !publishedSlug || !serviceAccountJson) {
+    if (!publishedSlug || !serviceAccountJson) {
       console.log('⚠️  Missing required environment variables');
       return;
     }
