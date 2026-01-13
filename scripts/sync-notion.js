@@ -314,6 +314,41 @@ async function webhookSync() {
   return false;
 }
 
+function generateSitemap() {
+  const baseUrl = 'https://www.thetripguide.xyz';
+  const publicDir = path.join(process.cwd(), 'public');
+
+  const files = fs.readdirSync(TRIPS_DIR).filter(file => file.endsWith('.md'));
+
+  const urls = files.map(file => {
+    const filePath = path.join(TRIPS_DIR, file);
+    const fileContent = fs.readFileSync(filePath, 'utf-8');
+    const { data } = matter(fileContent);
+    const slug = file.replace('.md', '');
+
+    return `  <url>
+    <loc>${baseUrl}/${slug}/</loc>
+    <lastmod>${new Date(data.date).toISOString().split('T')[0]}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>`;
+  });
+
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>${baseUrl}</loc>
+    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+${urls.join('\n')}
+</urlset>`;
+
+  fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), sitemap, 'utf-8');
+  console.log('🗺️  Sitemap generated');
+}
+
 async function syncNotionToTrips() {
   try {
     console.log('🔄 Starting Notion sync...');
@@ -332,6 +367,9 @@ async function syncNotionToTrips() {
     } else {
       hasChanges = await scheduledSync();
     }
+
+    // 항상 sitemap 생성 (trips 목록 기반)
+    generateSitemap();
 
     if (!hasChanges) {
       console.log('\nℹ️  No changes made');

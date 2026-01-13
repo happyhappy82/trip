@@ -44,13 +44,13 @@ jobs:
       - name: Check for changes
         id: check_changes
         run: |
-          if [ -z "$(git status --porcelain content/trips/ public/notion-images/)" ]; then
+          if [ -z "$(git status --porcelain content/trips/ public/notion-images/ public/sitemap.xml)" ]; then
             echo "has_changes=false" >> $GITHUB_OUTPUT
-            echo "No changes detected in content/trips/ or public/notion-images/"
+            echo "No changes detected"
           else
             echo "has_changes=true" >> $GITHUB_OUTPUT
             echo "Changes detected:"
-            git status --porcelain content/trips/ public/notion-images/
+            git status --porcelain content/trips/ public/notion-images/ public/sitemap.xml
           fi
 
       - name: Configure Git
@@ -64,6 +64,7 @@ jobs:
         run: |
           git add -A content/trips/
           git add -A public/notion-images/
+          git add -A public/sitemap.xml
 
           git commit -m "Sync trips from Notion"
 
