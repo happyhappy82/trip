@@ -161,7 +161,7 @@ export default async function TripPage({ params }: Props) {
               {trip.title}
             </h1>
             <div className="flex gap-4 text-sm text-gray-600">
-              <time dateTime={trip.date}>{trip.date}</time>
+              <time dateTime={trip.date}>{trip.date.split('T')[0]}</time>
               <span>{trip.readingTime}</span>
             </div>
           </div>

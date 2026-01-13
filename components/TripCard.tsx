@@ -9,6 +9,10 @@ interface TripCardProps {
   darkColor: string;
 }
 
+function formatDate(date: string): string {
+  return date.split('T')[0];
+}
+
 export default function TripCard({
   title,
   date,
@@ -27,7 +31,7 @@ export default function TripCard({
         >
           {title}
         </h2>
-        <p className="text-[13px] text-gray-700">{date}</p>
+        <p className="text-[13px] text-gray-700">{formatDate(date)}</p>
         <p className="mt-1">{excerpt}</p>
       </article>
     </Link>
