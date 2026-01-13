@@ -328,7 +328,7 @@ function generateSitemap() {
 
     return `  <url>
     <loc>${baseUrl}/${slug}/</loc>
-    <lastmod>${new Date(data.date).toISOString().split('T')[0]}</lastmod>
+    <lastmod>${new Date(data.date).toISOString()}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>`;
@@ -338,7 +338,7 @@ function generateSitemap() {
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>${baseUrl}</loc>
-    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+    <lastmod>${new Date().toISOString()}</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
