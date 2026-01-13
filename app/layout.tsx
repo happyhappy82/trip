@@ -19,6 +19,9 @@ export const metadata: Metadata = {
     icon: "/favicon.png",
     apple: "/favicon.png",
   },
+  alternates: {
+    canonical: "https://www.thetripguide.xyz",
+  },
   openGraph: {
     title: "더트립가이드",
     description: "숨은 명소부터 맛집, 숙소까지 전 세계 모든 여행 정보를 한눈에 확인하고 당신만의 특별한 여정을 완성해 보세요.",
@@ -30,8 +33,8 @@ export const metadata: Metadata = {
       {
         url: "/og-image.png",
         width: 1200,
-        height: 1200,
-        alt: "더트립가이드",
+        height: 630,
+        alt: "더트립가이드 - 전 세계 여행 정보",
       },
     ],
   },
@@ -71,6 +74,18 @@ export default function RootLayout({
     "description": "숨은 명소부터 맛집, 숙소까지 전 세계 모든 여행 정보를 한눈에 확인하고 당신만의 특별한 여정을 완성해 보세요.",
   };
 
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "더트립가이드",
+    "url": "https://www.thetripguide.xyz",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.thetripguide.xyz/og-image.png",
+    },
+    "description": "숨은 명소부터 맛집, 숙소까지 전 세계 모든 여행 정보를 한눈에 확인하고 당신만의 특별한 여정을 완성해 보세요.",
+  };
+
   return (
     <html lang="ko">
       <head>
@@ -99,6 +114,10 @@ gtag('config', 'G-1M1P837C6Y');`,
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
       </head>
       <body className="bg-white text-black">

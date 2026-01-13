@@ -45,12 +45,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       locale: "ko_KR",
       type: "article",
       publishedTime: trip.date,
+      modifiedTime: trip.date,
       authors: ["더트립가이드"],
+      images: [
+        {
+          url: "https://www.thetripguide.xyz/og-image.png",
+          width: 1200,
+          height: 630,
+          alt: trip.title,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: trip.title,
       description: trip.excerpt,
+      images: ["https://www.thetripguide.xyz/og-image.png"],
     },
   };
 }
@@ -180,6 +190,20 @@ export default async function TripPage({ params }: Props) {
                   const id = text.toLowerCase().replace(/\s+/g, "-");
                   return <h3 id={id} className="scroll-mt-24" {...props} />;
                 },
+                a: ({ node, href, children, ...props }) => {
+                  const isExternal = href?.startsWith('http') && !href?.includes('thetripguide.xyz');
+                  if (isExternal) {
+                    return (
+                      <a href={href} target="_blank" rel="noopener noreferrer" {...props}>
+                        {children}
+                      </a>
+                    );
+                  }
+                  return <a href={href} {...props}>{children}</a>;
+                },
+                img: ({ node, src, alt, ...props }) => (
+                  <img src={src} alt={alt || ''} loading="lazy" {...props} />
+                ),
               }}
             >
               {contentWithoutQnA}
