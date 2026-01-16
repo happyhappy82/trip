@@ -1,9 +1,9 @@
 # dependencies
 node_modules/
 
-# Next.js build output
-.next/
-out/
+# Astro build output
+dist/
+.astro/
 
 # misc
 .DS_Store
@@ -20,4 +20,3 @@ npm-debug.log*
 
 # typescript
 *.tsbuildinfo
-next-env.d.ts

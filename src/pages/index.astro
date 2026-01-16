@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import TripCard from '../components/TripCard.astro';
+import { getSortedTripsData } from '../utils/trips';
+
+const trips = getSortedTripsData();
+---
+
+<BaseLayout>
+  <Header isHome />
+  <div class="max-w-2xl mx-auto">
+    <div class="flex flex-col gap-8">
+      {trips.length === 0 ? (
+        <p>아직 여행 콘텐츠가 없습니다.</p>
+      ) : (
+        trips.map((trip) => (
+          <TripCard
+            title={trip.title}
+            date={trip.date}
+            excerpt={trip.excerpt}
+            slug={trip.slug}
+            lightColor={trip.lightColor}
+            darkColor={trip.darkColor}
+          />
+        ))
+      )}
+    </div>
+  </div>
+</BaseLayout>

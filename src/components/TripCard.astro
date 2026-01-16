@@ -1,0 +1,26 @@
+---
+interface Props {
+  title: string;
+  date: string;
+  excerpt: string;
+  slug: string;
+  lightColor: string;
+  darkColor: string;
+}
+
+const { title, date, excerpt, slug } = Astro.props;
+
+function formatDate(date: string): string {
+  return date.split('T')[0];
+}
+---
+
+<a class="block py-4" href={`/${slug}/`}>
+  <article>
+    <h2 class="text-[28px] font-black leading-none mb-2 text-gray-900">
+      {title}
+    </h2>
+    <time datetime={date} class="text-[13px] text-gray-700">{formatDate(date)}</time>
+    <p class="mt-1">{excerpt}</p>
+  </article>
+</a>

@@ -9,7 +9,6 @@ function extractExcerpt(content: string, maxLength: number = 150): string {
   const lines = content.split('\n');
   for (const line of lines) {
     const trimmed = line.trim();
-    // 헤더, 빈 줄, 이미지, 리스트 제외
     if (trimmed && !trimmed.startsWith('#') && !trimmed.startsWith('!') && !trimmed.startsWith('-') && !trimmed.startsWith('*')) {
       if (trimmed.length > maxLength) {
         return trimmed.slice(0, maxLength) + '...';
@@ -69,7 +68,6 @@ export function getSortedTripsData(): Trip[] {
 }
 
 export function getTripBySlug(slug: string): Trip | null {
-  // First try direct file match
   const fullPath = path.join(tripsDirectory, `${slug}.md`);
 
   if (fs.existsSync(fullPath)) {
@@ -89,7 +87,6 @@ export function getTripBySlug(slug: string): Trip | null {
     };
   }
 
-  // Search by frontmatter slug
   if (!fs.existsSync(tripsDirectory)) {
     return null;
   }

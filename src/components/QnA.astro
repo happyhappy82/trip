@@ -1,0 +1,37 @@
+---
+interface QnAItem {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  items: QnAItem[];
+}
+
+const { items } = Astro.props;
+---
+
+{items.length > 0 && (
+  <div class="mt-12 border-t pt-8">
+    <h2 id="자주-묻는-질문" class="text-2xl font-bold mb-6">자주 묻는 질문</h2>
+    <div class="space-y-4">
+      {items.map((item) => (
+        <details class="border rounded-lg group">
+          <summary class="w-full text-left p-4 font-semibold hover:bg-gray-50 flex justify-between items-center cursor-pointer list-none">
+            <span>{item.question}</span>
+            <span class="text-2xl transition-transform group-open:rotate-45">+</span>
+          </summary>
+          <div class="p-4 pt-0 text-gray-700 whitespace-pre-wrap">
+            {item.answer}
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+)}
+
+<style>
+  details summary::-webkit-details-marker {
+    display: none;
+  }
+</style>

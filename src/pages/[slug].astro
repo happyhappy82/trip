@@ -1,0 +1,158 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import TableOfContents from '../components/TableOfContents.astro';
+import QnA from '../components/QnA.astro';
+import { getSortedTripsData, getTripBySlug } from '../utils/trips';
+import { extractQnA, removeQnASection } from '../utils/qna-utils';
+import { marked } from 'marked';
+
+// Generate static paths
+export async function getStaticPaths() {
+  const trips = getSortedTripsData();
+  return trips.map((trip) => ({
+    params: { slug: trip.slug },
+  }));
+}
+
+const { slug } = Astro.params;
+const trip = getTripBySlug(slug as string);
+
+if (!trip) {
+  return Astro.redirect('/404');
+}
+
+const qnaItems = extractQnA(trip.content);
+const contentWithoutQnA = removeQnASection(trip.content);
+
+const baseUrl = 'https://www.thetripguide.xyz';
+const pageUrl = `${baseUrl}/${slug}/`;
+
+// Article Schema
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: trip.title,
+  description: trip.excerpt,
+  author: {
+    "@type": "Organization",
+    name: "더트립가이드",
+    url: baseUrl,
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "더트립가이드",
+    url: baseUrl,
+    logo: {
+      "@type": "ImageObject",
+      url: `${baseUrl}/og-image.png`,
+    },
+  },
+  datePublished: trip.date,
+  dateModified: trip.date,
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": pageUrl,
+  },
+  image: `${baseUrl}/og-image.png`,
+};
+
+// Breadcrumb Schema
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "홈",
+      item: baseUrl,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: trip.title,
+      item: pageUrl,
+    },
+  ],
+};
+
+// FAQ Schema (only if Q&A exists)
+const faqSchema = qnaItems.length > 0 ? {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: qnaItems.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+} : null;
+
+// Custom renderer for heading IDs and external links
+const renderer = new marked.Renderer();
+
+renderer.heading = function({ text, depth }: { text: string; depth: number }) {
+  const id = text.toLowerCase().replace(/\s+/g, '-');
+  return `<h${depth} id="${id}" class="scroll-mt-24">${text}</h${depth}>`;
+};
+
+renderer.link = function({ href, text }: { href: string; text: string }) {
+  const isExternal = href?.startsWith('http') && !href?.includes('thetripguide.xyz');
+  if (isExternal) {
+    return `<a href="${href}" target="_blank" rel="noopener noreferrer">${text}</a>`;
+  }
+  return `<a href="${href}">${text}</a>`;
+};
+
+renderer.image = function({ href, text }: { href: string; text: string }) {
+  return `<img src="${href}" alt="${text || ''}" loading="lazy" />`;
+};
+
+marked.use({ renderer });
+const htmlContent = await marked.parse(contentWithoutQnA);
+---
+
+<BaseLayout
+  title={trip.title}
+  description={trip.excerpt}
+  canonical={pageUrl}
+  ogType="article"
+  publishedTime={trip.date}
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    {faqSchema && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
+  </Fragment>
+
+  <Header />
+  <div class="relative">
+    <!-- Main Content -->
+    <article class="max-w-3xl">
+      <div class="mb-8">
+        <h1
+          class="text-[42px] font-black leading-tight mb-4"
+          style={`color: ${trip.darkColor}`}
+        >
+          {trip.title}
+        </h1>
+        <div class="flex gap-4 text-sm text-gray-600">
+          <time datetime={trip.date}>{trip.date.split('T')[0]}</time>
+          <span>{trip.readingTime}</span>
+        </div>
+      </div>
+
+      <div class="prose prose-lg max-w-none" set:html={htmlContent} />
+
+      <QnA items={qnaItems} />
+    </article>
+
+    <!-- Sidebar TOC - Fixed position on right -->
+    <aside class="hidden xl:block fixed top-24 right-8 w-56">
+      <TableOfContents />
+    </aside>
+  </div>
+</BaseLayout>

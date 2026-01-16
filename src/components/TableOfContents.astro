@@ -1,0 +1,90 @@
+---
+// TOC is generated client-side from article h2 headings
+---
+
+<nav class="sticky top-24" id="toc-nav">
+  <div class="border-l-2 border-gray-200 pl-4">
+    <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">
+      목차
+    </p>
+    <ul class="space-y-3" id="toc-list">
+      <!-- Populated by JavaScript -->
+    </ul>
+  </div>
+</nav>
+
+<script>
+  interface TocItem {
+    id: string;
+    text: string;
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const tocNav = document.getElementById('toc-nav');
+    const tocList = document.getElementById('toc-list');
+    if (!tocList || !tocNav) return;
+
+    // Build TOC from h2 elements
+    const headings = document.querySelectorAll('article h2');
+    const items: TocItem[] = [];
+
+    headings.forEach((heading) => {
+      const id = heading.id || heading.textContent?.toLowerCase().replace(/\s+/g, '-') || '';
+      const text = heading.textContent || '';
+      if (id && text) {
+        items.push({ id, text });
+      }
+    });
+
+    if (items.length === 0) {
+      tocNav.style.display = 'none';
+      return;
+    }
+
+    // Render TOC items
+    items.forEach((item) => {
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = `#${item.id}`;
+      a.textContent = item.text;
+      a.className = 'block text-sm leading-relaxed transition-colors duration-200 text-gray-500 hover:text-gray-900 toc-link';
+      a.dataset.id = item.id;
+
+      a.addEventListener('click', (e) => {
+        e.preventDefault();
+        const element = document.getElementById(item.id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+
+      li.appendChild(a);
+      tocList.appendChild(li);
+    });
+
+    // Intersection Observer for active state
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Remove active from all
+            document.querySelectorAll('.toc-link').forEach((link) => {
+              link.classList.remove('text-emerald-600', 'font-medium', 'border-l-2', 'border-emerald-600', '-ml-[18px]', 'pl-4');
+              link.classList.add('text-gray-500');
+            });
+
+            // Add active to current
+            const activeLink = document.querySelector(`.toc-link[data-id="${entry.target.id}"]`);
+            if (activeLink) {
+              activeLink.classList.add('text-emerald-600', 'font-medium', 'border-l-2', 'border-emerald-600', '-ml-[18px]', 'pl-4');
+              activeLink.classList.remove('text-gray-500');
+            }
+          }
+        });
+      },
+      { rootMargin: '-100px 0px -70% 0px' }
+    );
+
+    headings.forEach((heading) => observer.observe(heading));
+  });
+</script>

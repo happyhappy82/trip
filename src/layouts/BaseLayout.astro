@@ -1,0 +1,143 @@
+---
+import '../styles/globals.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  ogType?: string;
+  publishedTime?: string;
+}
+
+const {
+  title = '더트립가이드',
+  description = '숨은 명소부터 맛집, 숙소까지 전 세계 모든 여행 정보를 한눈에 확인하고 당신만의 특별한 여정을 완성해 보세요.',
+  canonical = 'https://www.thetripguide.xyz',
+  ogType = 'website',
+  publishedTime,
+} = Astro.props;
+
+const siteUrl = 'https://www.thetripguide.xyz';
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "더트립가이드",
+  "alternateName": "더트립가이드",
+  "url": siteUrl,
+  "description": description,
+};
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "더트립가이드",
+  "url": siteUrl,
+  "logo": {
+    "@type": "ImageObject",
+    "url": `${siteUrl}/og-image.png`,
+  },
+  "description": description,
+};
+---
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content="여행, 여행지 추천, 여행 팁, 숙소, 관광, 해외여행, 국내여행" />
+    <meta name="author" content="더트립가이드" />
+    <meta name="creator" content="더트립가이드" />
+    <meta name="publisher" content="더트립가이드" />
+
+    <link rel="canonical" href={canonical} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content="더트립가이드" />
+    <meta property="og:image" content={`${siteUrl}/og-image.png`} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={title} />
+    {publishedTime && <meta property="article:published_time" content={publishedTime} />}
+    {publishedTime && <meta property="article:modified_time" content={publishedTime} />}
+    {publishedTime && <meta property="article:author" content="더트립가이드" />}
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${siteUrl}/og-image.png`} />
+
+    <!-- Robots -->
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1" />
+
+    <!-- Verification -->
+    <meta name="google-site-verification" content="NcQrZvNEBO9TE4yaWHY5IoS-MryqqhlWAhdgPqdyu14" />
+    <meta name="naver-site-verification" content="f7051e4180cc3651099113de428f8af5519995a0" />
+
+    <!-- JSON-LD Schemas -->
+    <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+
+    <slot name="head" />
+  </head>
+  <body class="bg-white text-black">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-MHKVX5TG"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden;"
+      ></iframe>
+    </noscript>
+
+    <main class="mx-auto max-w-4xl px-5 py-12">
+      <slot />
+    </main>
+
+    <!-- Google Tag Manager - Lazy Load -->
+    <script is:inline>
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-MHKVX5TG');
+        }, 2000);
+      });
+    </script>
+
+    <!-- Google Analytics - Lazy Load -->
+    <script is:inline>
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          var s = document.createElement('script');
+          s.src = 'https://www.googletagmanager.com/gtag/js?id=G-1M1P837C6Y';
+          s.async = true;
+          document.head.appendChild(s);
+
+          s.onload = function() {
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-1M1P837C6Y');
+          };
+        }, 2000);
+      });
+    </script>
+  </body>
+</html>

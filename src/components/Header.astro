@@ -1,0 +1,24 @@
+---
+interface Props {
+  isHome?: boolean;
+}
+
+const { isHome = false } = Astro.props;
+---
+
+<header class="mb-16 flex justify-center">
+  <a href="/" class="flex items-center gap-6">
+    <img
+      src="/logo.jpg"
+      alt="더트립가이드 로고"
+      width="140"
+      height="140"
+      class="w-[140px] h-[140px]"
+    />
+    {isHome ? (
+      <h1 class="text-6xl font-black text-emerald-600">더트립가이드</h1>
+    ) : (
+      <span class="text-6xl font-black text-emerald-600">더트립가이드</span>
+    )}
+  </a>
+</header>

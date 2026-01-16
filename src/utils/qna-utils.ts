@@ -1,4 +1,4 @@
-interface QnAItem {
+export interface QnAItem {
   question: string;
   answer: string;
 }
