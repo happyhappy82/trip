@@ -166,7 +166,7 @@ export default async function TripPage({ params }: Props) {
           <div className="mb-8">
             <h1
               className="text-[42px] font-black leading-tight mb-4"
-              style={{ color: trip.lightColor }}
+              style={{ color: trip.darkColor }}
             >
               {trip.title}
             </h1>

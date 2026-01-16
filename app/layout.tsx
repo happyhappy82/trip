@@ -113,9 +113,9 @@ export default function RootLayout({
           />
         </noscript>
         {/* End Google Tag Manager (noscript) */}
-        <div className="mx-auto max-w-4xl px-5 py-12">
+        <main className="mx-auto max-w-4xl px-5 py-12">
           {children}
-        </div>
+        </main>
 
         {/* Google Tag Manager - lazy loading */}
         <Script
