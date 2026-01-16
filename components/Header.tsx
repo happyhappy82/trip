@@ -11,7 +11,7 @@ export default function Header({ isHome = false }: HeaderProps) {
     <header className="mb-16 flex justify-center">
       <a href="/" className="flex items-center gap-6">
         <Image
-          src="/logo.png"
+          src="/logo.jpg"
           alt="더트립가이드 로고"
           width={140}
           height={140}
