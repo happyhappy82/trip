@@ -2,8 +2,4 @@
 User-agent: *
 Allow: /
 
-# Block unnecessary paths
-Disallow: /_next/static/
-Disallow: /api/
-
 Sitemap: https://www.thetripguide.xyz/sitemap.xml
