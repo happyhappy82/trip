@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.thetripguide.xyz/</loc>
-    <lastmod>2026-01-19T09:31:51.459Z</lastmod>
+    <lastmod>2026-01-20T04:41:01.503Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -27,6 +27,12 @@
   <url>
     <loc>https://www.thetripguide.xyz/2026-kaenada-yeohaeng-junbimul-congjeongri/</loc>
     <lastmod>2026-01-13T03:35:00.000Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thetripguide.xyz/2026-kolrombia-yeohaeng-junbimul-congjeongri/</loc>
+    <lastmod>2026-01-20T03:35:00.000Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
