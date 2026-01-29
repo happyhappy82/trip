@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.thetripguide.xyz/</loc>
-    <lastmod>2026-01-28T09:31:41.984Z</lastmod>
+    <lastmod>2026-01-29T05:03:37.920Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -81,6 +81,12 @@
   <url>
     <loc>https://www.thetripguide.xyz/2026-migug-yeohaeng-junbimul-congjeongri/</loc>
     <lastmod>2026-01-13T03:35:00.000Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thetripguide.xyz/2026-migugryeongpuereutoriko-yeohaeng-junbimul-congjeongri/</loc>
+    <lastmod>2026-01-29T03:35:00.000Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
