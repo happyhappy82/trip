@@ -2,9 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.thetripguide.xyz/</loc>
-    <lastmod>2026-01-30T09:36:06.530Z</lastmod>
+    <lastmod>2026-01-31T04:59:39.114Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.thetripguide.xyz/2026-ailraendeu-yeohaeng-junbimul-congjeongri/</loc>
+    <lastmod>2026-01-31T03:33:00.000Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.thetripguide.xyz/2026-areuhentina-yeohaeng-junbimul-congjeongri/</loc>
