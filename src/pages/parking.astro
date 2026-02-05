@@ -14,7 +14,7 @@ const pageUrl = 'https://www.thetripguide.xyz/parking/';
   description={pageDescription}
   canonical={pageUrl}
 >
-  <Fragment slot="head" set:html={`<script src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${naverClientId}"></script>`} />
+  <Fragment slot="head" set:html={`<script src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=${naverClientId}"></script>`} />
   <Header />
 
   <div class="max-w-3xl mx-auto">
