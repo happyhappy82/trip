@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.thetripguide.xyz/</loc>
-    <lastmod>2026-02-04T09:40:45.289Z</lastmod>
+    <lastmod>2026-02-05T05:15:23.177Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -123,6 +123,12 @@
   <url>
     <loc>https://www.thetripguide.xyz/2026-peurangseu-yeohaeng-junbimul-congjeongri/</loc>
     <lastmod>2026-02-01T03:33:00.000Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thetripguide.xyz/2026-poreutugal-yeohaeng-junbimul-congjeongri/</loc>
+    <lastmod>2026-02-05T03:33:00.000Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
