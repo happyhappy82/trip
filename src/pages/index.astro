@@ -10,6 +10,21 @@ const trips = getSortedTripsData();
 <BaseLayout>
   <Header isHome />
   <div class="max-w-2xl mx-auto">
+    <!-- 무료주차장 검색 배너 -->
+    <a
+      href="/parking/"
+      class="block mb-8 p-5 bg-emerald-50 border border-emerald-100 rounded-2xl hover:bg-emerald-100 transition-colors group"
+    >
+      <div class="flex items-center gap-4">
+        <span class="text-3xl">&#x1F17F;&#xFE0F;</span>
+        <div>
+          <p class="font-bold text-emerald-800 group-hover:text-emerald-900">전국 무료주차장 검색</p>
+          <p class="text-sm text-emerald-600">지역명으로 무료주차장, 공영주차장을 간편하게 찾아보세요</p>
+        </div>
+        <svg class="w-5 h-5 text-emerald-400 ml-auto shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+      </div>
+    </a>
+
     <div class="flex flex-col gap-8">
       {trips.length === 0 ? (
         <p>아직 여행 콘텐츠가 없습니다.</p>

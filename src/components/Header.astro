@@ -4,21 +4,44 @@ interface Props {
 }
 
 const { isHome = false } = Astro.props;
+const currentPath = Astro.url.pathname;
 ---
 
-<header class="mb-16 flex justify-center">
-  <a href="/" class="flex items-center gap-6">
-    <img
-      src="/logo.jpg"
-      alt="더트립가이드 로고"
-      width="140"
-      height="140"
-      class="w-[140px] h-[140px]"
-    />
-    {isHome ? (
-      <h1 class="text-6xl font-black text-emerald-600">더트립가이드</h1>
-    ) : (
-      <span class="text-6xl font-black text-emerald-600">더트립가이드</span>
-    )}
-  </a>
+<header class="mb-16">
+  <div class="flex justify-center">
+    <a href="/" class="flex items-center gap-6">
+      <img
+        src="/logo.jpg"
+        alt="더트립가이드 로고"
+        width="140"
+        height="140"
+        class="w-[140px] h-[140px]"
+      />
+      {isHome ? (
+        <h1 class="text-6xl font-black text-emerald-600">더트립가이드</h1>
+      ) : (
+        <span class="text-6xl font-black text-emerald-600">더트립가이드</span>
+      )}
+    </a>
+  </div>
+  <nav class="flex justify-center gap-8 mt-6 text-base font-semibold">
+    <a
+      href="/"
+      class:list={[
+        'pb-1 border-b-2 transition-colors',
+        currentPath === '/' ? 'text-emerald-600 border-emerald-600' : 'text-gray-500 border-transparent hover:text-emerald-600',
+      ]}
+    >
+      여행가이드
+    </a>
+    <a
+      href="/parking/"
+      class:list={[
+        'pb-1 border-b-2 transition-colors',
+        currentPath.startsWith('/parking') ? 'text-emerald-600 border-emerald-600' : 'text-gray-500 border-transparent hover:text-emerald-600',
+      ]}
+    >
+      무료주차장
+    </a>
+  </nav>
 </header>
