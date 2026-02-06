@@ -315,7 +315,7 @@ async function webhookSync() {
 }
 
 function generateSitemap() {
-  const baseUrl = 'https://www.thetripguide.xyz';
+  const baseUrl = 'https://thetripguide.xyz';
   const publicDir = path.join(process.cwd(), 'public');
 
   const files = fs.readdirSync(TRIPS_DIR).filter(file => file.endsWith('.md'));
