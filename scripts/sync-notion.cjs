@@ -111,6 +111,25 @@ function deleteTripFile(slug) {
   return false;
 }
 
+function fixBrokenToggleBlocks(markdown) {
+  // <details> 블록 안에 ## 헤딩이 들어간 경우를 찾아 수정
+  // notion-to-md가 토글 children 경계를 잘못 잡아 다른 섹션이 포함되는 버그 대응
+  return markdown.replace(
+    /<details>\s*\n<summary>([\s\S]*?)<\/summary>\s*\n([\s\S]*?)<\/details>/gi,
+    (match, summary, body) => {
+      // 본문에 ## 헤딩이 포함되어 있으면 헤딩 앞에서 </details> 닫기
+      const headingMatch = body.match(/(\n##\s+)/);
+      if (headingMatch && headingMatch.index !== undefined) {
+        const beforeHeading = body.slice(0, headingMatch.index).trimEnd();
+        const afterHeading = body.slice(headingMatch.index);
+        console.log(`  🔧 Fixed broken toggle: "${summary.trim().slice(0, 30)}..."`);
+        return `<details>\n<summary>${summary}</summary>\n${beforeHeading}\n\n</details>\n${afterHeading}`;
+      }
+      return match;
+    }
+  );
+}
+
 async function processPage(pageId, isNew = false) {
   const props = await getPageProperties(pageId);
 
@@ -131,6 +150,10 @@ async function processPage(pageId, isNew = false) {
 
   const mdblocks = await n2m.pageToMarkdown(pageId);
   let markdown = n2m.toMarkdownString(mdblocks).parent;
+
+  // notion-to-md 토글 변환 버그 후처리:
+  // <details> 안에 ## 헤딩이 포함된 경우 </details>를 헤딩 앞으로 이동
+  markdown = fixBrokenToggleBlocks(markdown);
 
   const imageMatches = markdown.match(/!\[.*?\]\((https?:\/\/.*?)\)/g);
   if (imageMatches) {
