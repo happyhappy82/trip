@@ -3,13 +3,13 @@ export interface QnAItem {
   answer: string;
 }
 
-// FAQ 섹션 제목 패턴들
+// FAQ 섹션 제목 패턴들 (번호 접두사, 부제 등 부가 텍스트 허용)
 const FAQ_SECTION_PATTERNS = [
-  /##\s*자주\s*묻는\s*질문\s*\n/i,
-  /##\s*여행\s*전\s*필수\s*FAQ\s*\n/i,
-  /##\s*FAQ\s*\n/i,
-  /##\s*Q\s*&\s*A\s*\n/i,
-  /##\s*QnA\s*\n/i,
+  /##\s*[^#\n]*자주\s*묻는\s*질문[^\n]*\n/i,
+  /##\s*[^#\n]*여행\s*전\s*필수\s*FAQ[^\n]*\n/i,
+  /##\s*[^#\n]*FAQ[^\n]*\n/i,
+  /##\s*[^#\n]*Q\s*&\s*A[^\n]*\n/i,
+  /##\s*[^#\n]*QnA[^\n]*\n/i,
 ];
 
 export function extractQnA(content: string): QnAItem[] {
@@ -81,7 +81,8 @@ function extractFromHeadings(content: string): QnAItem[] {
     : afterFaq;
 
   // <details> 블록 제거 (toggle 형식은 extractFromToggle에서 처리)
-  const cleanedFaqSection = faqSection.replace(/<details[\s\S]*?<\/details>/gi, '');
+  // 닫히지 않은 <details> 블록도 함께 제거 (섹션 경계에서 잘린 경우 대응)
+  const cleanedFaqSection = faqSection.replace(/<details[\s\S]*?(<\/details>|$)/gi, '');
 
   // ### 헤딩으로 분리
   const headingParts = cleanedFaqSection.split(/\n###\s+/).filter(Boolean);
