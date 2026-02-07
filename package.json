@@ -24,6 +24,9 @@
     "tailwindcss": "^3.4.19",
     "transliteration": "^2.3.5"
   },
+  "engines": {
+    "node": "20.x"
+  },
   "devDependencies": {
     "@types/node": "^20.19.27",
     "typescript": "^5.9.3"
