@@ -80,8 +80,11 @@ function extractFromHeadings(content: string): QnAItem[] {
     ? afterFaq.slice(0, nextSectionMatch.index)
     : afterFaq;
 
+  // <details> 블록 제거 (toggle 형식은 extractFromToggle에서 처리)
+  const cleanedFaqSection = faqSection.replace(/<details[\s\S]*?<\/details>/gi, '');
+
   // ### 헤딩으로 분리
-  const headingParts = faqSection.split(/\n###\s+/).filter(Boolean);
+  const headingParts = cleanedFaqSection.split(/\n###\s+/).filter(Boolean);
 
   for (const part of headingParts) {
     const lines = part.trim().split('\n');
