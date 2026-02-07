@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://thetripguide.xyz/sitemap.xml
+Sitemap: https://thetripguide.xyz/sitemap-index.xml
