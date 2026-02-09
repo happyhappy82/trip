@@ -32,7 +32,16 @@ const currentPath = Astro.url.pathname;
         currentPath === '/' ? 'text-emerald-600 border-emerald-600' : 'text-gray-500 border-transparent hover:text-emerald-600',
       ]}
     >
-      여행가이드
+      해외여행
+    </a>
+    <a
+      href="/domestic/"
+      class:list={[
+        'pb-1 border-b-2 transition-colors',
+        currentPath.startsWith('/domestic') ? 'text-emerald-600 border-emerald-600' : 'text-gray-500 border-transparent hover:text-emerald-600',
+      ]}
+    >
+      국내여행
     </a>
     <a
       href="/parking/"

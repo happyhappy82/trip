@@ -2,7 +2,7 @@ const { google } = require('googleapis');
 
 async function submitToGoogle() {
   try {
-    const siteUrl = 'https://thetripguide.xyz';
+    const siteUrl = 'https://www.thetripguide.xyz';
     const publishedSlug = process.env.PUBLISHED_SLUG;
     const serviceAccountJson = process.env.GOOGLE_SERVICE_ACCOUNT_JSON;
 

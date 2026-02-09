@@ -6,6 +6,7 @@ excerpt: "직접 발로 뛰며 경험한 꿀팁과 알찬 코스들을 모아, �
 lightColor: "lab(62.926 59.277 -1.573)"
 darkColor: "lab(80.993 32.329 -7.093)"
 notionPageId: "2e5753eb-c013-812e-a65a-f653e79deec1"
+category: "domestic"
 ---
 
 

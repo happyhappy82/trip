@@ -19,6 +19,8 @@ function extractExcerpt(content: string, maxLength: number = 150): string {
   return '';
 }
 
+export type TripCategory = 'overseas' | 'domestic';
+
 export interface Trip {
   slug: string;
   title: string;
@@ -29,6 +31,7 @@ export interface Trip {
   darkColor: string;
   readingTime: string;
   notionPageId?: string;
+  category: TripCategory;
 }
 
 export function getSortedTripsData(): Trip[] {
@@ -55,6 +58,7 @@ export function getSortedTripsData(): Trip[] {
         darkColor: data.darkColor || 'lab(80.993 32.329 -7.093)',
         readingTime: readingTime(content).text,
         notionPageId: data.notionPageId,
+        category: (data.category as TripCategory) || 'overseas',
       };
     });
 
@@ -84,6 +88,7 @@ export function getTripBySlug(slug: string): Trip | null {
       darkColor: data.darkColor || 'lab(80.993 32.329 -7.093)',
       readingTime: readingTime(content).text,
       notionPageId: data.notionPageId,
+      category: (data.category as TripCategory) || 'overseas',
     };
   }
 
@@ -110,9 +115,14 @@ export function getTripBySlug(slug: string): Trip | null {
         darkColor: data.darkColor || 'lab(80.993 32.329 -7.093)',
         readingTime: readingTime(content).text,
         notionPageId: data.notionPageId,
+        category: (data.category as TripCategory) || 'overseas',
       };
     }
   }
 
   return null;
+}
+
+export function getTripsByCategory(category: TripCategory): Trip[] {
+  return getSortedTripsData().filter((trip) => trip.category === category);
 }
