@@ -28,7 +28,15 @@
       "roadAddress": "서울 광진구 뚝섬로52길 58",
       "kakaoPhone": "02-2049-4595",
       "kakaoName": "자양유수지 공영주차장",
-      "kakaoVerified": true
+      "kakaoVerified": true,
+      "naverPlaceId": "1818015545",
+      "naverName": "자양유수지 노상 공영 주차장",
+      "naverPhone": "02-2049-4540",
+      "naverAddress": "서울특별시 광진구 자양동 594",
+      "naverRoadAddress": "서울특별시 광진구 뚝섬로52길 74-1",
+      "naverX": "127.0776666",
+      "naverY": "37.5296746",
+      "naverVerified": true
     },
     {
       "name": "구의1동 공영주차장",
@@ -55,7 +63,14 @@
       "roadAddress": "서울 광진구 자양로18길 78",
       "kakaoPhone": "02-453-2028",
       "kakaoName": "구의1동 공영주차장",
-      "kakaoVerified": true
+      "kakaoVerified": true,
+      "naverPlaceId": "35992895",
+      "naverName": "구의1동공영주차장",
+      "naverAddress": "서울특별시 광진구 구의동 243-78",
+      "naverRoadAddress": "서울특별시 광진구 자양로18길 78",
+      "naverX": "127.0878866",
+      "naverY": "37.5383242",
+      "naverVerified": true
     },
     {
       "name": "중곡3동 마을공원 공영주차장",
@@ -81,7 +96,14 @@
       "dong": "중곡동",
       "roadAddress": "서울 광진구 용마산로33길 25",
       "kakaoName": "중곡3동 마을공원공영주차장",
-      "kakaoVerified": true
+      "kakaoVerified": true,
+      "naverPlaceId": "1006965782",
+      "naverName": "중곡3동1마을공원공영주차장",
+      "naverAddress": "서울특별시 광진구 중곡동 195-1",
+      "naverRoadAddress": "서울특별시 광진구 용마산로33길 25",
+      "naverX": "127.0845467",
+      "naverY": "37.5700888",
+      "naverVerified": true
     },
     {
       "name": "구의3동 공영주차장",
@@ -108,7 +130,14 @@
       "roadAddress": "서울 광진구 광나루로52길 83",
       "kakaoPhone": "02-2049-4595",
       "kakaoName": "구의3동 공영주차장",
-      "kakaoVerified": true
+      "kakaoVerified": true,
+      "naverPlaceId": "18816578",
+      "naverName": "구의3동공영주차장",
+      "naverAddress": "서울특별시 광진구 구의동 219-15",
+      "naverRoadAddress": "서울특별시 광진구 광나루로52길 83",
+      "naverX": "127.0914082",
+      "naverY": "37.5391857",
+      "naverVerified": true
     },
     {
       "name": "구의2동 주택가공동 주차장",
@@ -135,7 +164,15 @@
       "roadAddress": "서울 광진구 자양로 307",
       "kakaoPhone": "02-2049-4595",
       "kakaoName": "구의2동주택가 공동주차장",
-      "kakaoVerified": true
+      "kakaoVerified": true,
+      "naverPlaceId": "226115480",
+      "naverName": "구의2동주택가공동주차장",
+      "naverPhone": "02-2049-4595",
+      "naverAddress": "서울특별시 광진구 구의동 30-9",
+      "naverRoadAddress": "서울특별시 광진구 자양로 307",
+      "naverX": "127.0928143",
+      "naverY": "37.5529766",
+      "naverVerified": true
     },
     {
       "name": "자양4동 공영",
@@ -161,7 +198,14 @@
       "dong": "자양동",
       "kakaoPhone": "02-2049-4595",
       "kakaoName": "자양4동 공영주차장",
-      "kakaoVerified": true
+      "kakaoVerified": true,
+      "naverPlaceId": "21185991",
+      "naverName": "자양4동공영주차장",
+      "naverPhone": "02-2049-4595",
+      "naverAddress": "서울특별시 광진구 자양동 5-5",
+      "naverX": "127.0681855",
+      "naverY": "37.5386904",
+      "naverVerified": true
     },
     {
       "name": "구의2동 복합청사 공영주차장",
@@ -187,7 +231,14 @@
       "dong": "구의동",
       "roadAddress": "서울 광진구 천호대로136길 55",
       "kakaoName": "광진구구의동주차장",
-      "kakaoVerified": true
+      "kakaoVerified": true,
+      "naverPlaceId": "1055480485",
+      "naverName": "구의2동 복합청사 지하주차장",
+      "naverAddress": "서울특별시 광진구 구의동 63-6",
+      "naverRoadAddress": "서울특별시 광진구 천호대로136길 55",
+      "naverX": "127.0899571",
+      "naverY": "37.5471482",
+      "naverVerified": true
     },
     {
       "name": "능동 공영주차장",
@@ -214,7 +265,15 @@
       "roadAddress": "서울 광진구 천호대로112길 56",
       "kakaoPhone": "02-2049-4595",
       "kakaoName": "능동공영주차장",
-      "kakaoVerified": true
+      "kakaoVerified": true,
+      "naverPlaceId": "18810610",
+      "naverName": "능동공영주차장",
+      "naverPhone": "02-2049-4595",
+      "naverAddress": "서울특별시 광진구 능동 205",
+      "naverRoadAddress": "서울특별시 광진구 천호대로112길 56",
+      "naverX": "127.0803494",
+      "naverY": "37.5540552",
+      "naverVerified": true
     },
     {
       "name": "화양동 공영",
@@ -241,7 +300,14 @@
       "roadAddress": "서울 광진구 군자로 22",
       "kakaoPhone": "02-469-2939",
       "kakaoName": "화양동 공영주차장",
-      "kakaoVerified": true
+      "kakaoVerified": true,
+      "naverPlaceId": "2145499999",
+      "naverName": "화양동 공영주차장",
+      "naverAddress": "서울특별시 광진구 화양동 63-2",
+      "naverRoadAddress": "서울특별시 광진구 군자로 22",
+      "naverX": "127.0711495",
+      "naverY": "37.5452699",
+      "naverVerified": true
     },
     {
       "name": "광진광장 공영",
@@ -268,7 +334,15 @@
       "roadAddress": "서울 광진구 광나루로 389",
       "kakaoPhone": "02-2049-4595",
       "kakaoName": "광진광장 공영주차장",
-      "kakaoVerified": true
+      "kakaoVerified": true,
+      "naverPlaceId": "21185766",
+      "naverName": "광진광장공영주차장",
+      "naverPhone": "02-465-2026",
+      "naverAddress": "서울특별시 광진구 군자동 374-4",
+      "naverRoadAddress": "서울특별시 광진구 광나루로 389",
+      "naverX": "127.0731127",
+      "naverY": "37.5477560",
+      "naverVerified": true
     },
     {
       "name": "올림픽대교(북)",
@@ -292,7 +366,8 @@
       "sido": "서울특별시",
       "sigungu": "광진구",
       "dong": "구의동",
-      "kakaoVerified": false
+      "kakaoVerified": false,
+      "naverVerified": false
     }
   ]
 }

@@ -62,8 +62,8 @@ for (let i = 0; i < items.length; i++) {
   // 검색 쿼리: 이름 + 주소 (더 정확하게)
   const queries = [
     lot.name + ' 주차장 ' + lot.address,
-    lot.name + ' 주차장 강남구',
-    lot.name + ' 강남구',
+    lot.name + ' 주차장 ' + data.sigungu,
+    lot.name + ' ' + data.sigungu,
   ];
 
   let placeId = null;
@@ -80,8 +80,8 @@ for (let i = 0; i < items.length; i++) {
         const pName = (p.name || '').replace(/<[^>]*>/g, '');
         const pAddr = p.roadAddress || p.address || '';
 
-        // 이름이 비슷하거나 주소가 강남구인 것
-        if (pAddr.includes('강남구') || pName.includes(lot.name.replace(/\s/g, '').slice(0, 3))) {
+        // 이름이 비슷하거나 주소가 해당 시군구인 것
+        if (pAddr.includes(data.sigungu) || pName.includes(lot.name.replace(/\s/g, '').slice(0, 3))) {
           placeId = p.id;
           placeName = pName;
           break;
