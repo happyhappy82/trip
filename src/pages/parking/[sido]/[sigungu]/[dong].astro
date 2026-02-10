@@ -1,0 +1,70 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import Header from '../../../../components/Header.astro';
+import ParkingDirectory from '../../../../components/ParkingDirectory.astro';
+import fs from 'node:fs';
+import path from 'node:path';
+
+const naverClientId = import.meta.env.PUBLIC_NAVER_MAP_CLIENT_ID;
+
+export function getStaticPaths() {
+  const parkingDir = path.join(process.cwd(), 'content', 'parking');
+  const paths: { params: { sido: string; sigungu: string; dong: string } }[] = [];
+
+  if (!fs.existsSync(parkingDir)) return paths;
+
+  const sidos = fs.readdirSync(parkingDir).filter((f: string) =>
+    fs.statSync(path.join(parkingDir, f)).isDirectory()
+  );
+
+  for (const sido of sidos) {
+    const sidoDir = path.join(parkingDir, sido);
+    const files = fs.readdirSync(sidoDir).filter((f: string) => f.endsWith('.json'));
+
+    for (const file of files) {
+      const sigungu = file.replace('.json', '');
+      const filePath = path.join(sidoDir, file);
+
+      try {
+        const raw = fs.readFileSync(filePath, 'utf-8');
+        const data = JSON.parse(raw);
+        const dongs = new Set<string>();
+
+        for (const item of data.items || []) {
+          if (item.dong) dongs.add(item.dong);
+        }
+
+        for (const dong of dongs) {
+          paths.push({ params: { sido, sigungu, dong } });
+        }
+      } catch (e) {
+        // skip invalid files
+      }
+    }
+  }
+
+  return paths;
+}
+
+const { sido, sigungu, dong } = Astro.params;
+
+const jsonPath = path.join(process.cwd(), 'content', 'parking', sido!, `${sigungu}.json`);
+const raw = fs.readFileSync(jsonPath, 'utf-8');
+const data = JSON.parse(raw);
+
+const items = data.items
+  .filter((item: any) => item.dong === dong)
+  .sort((a: any, b: any) => b.totalSpaces - a.totalSpaces);
+
+const title = `${dong} 무료주차장 | ${sido} ${sigungu} 공영주차장 정보`;
+const description = `${sido} ${sigungu} ${dong} 지역의 무료 공영주차장 ${items.filter((i: any) => i.isFree).length}곳, 유료 주차장 ${items.filter((i: any) => !i.isFree).length}곳 정보를 확인하세요. 주소, 운영시간, 요금, 주차면수 등 상세 정보 제공.`;
+const canonical = `https://www.thetripguide.xyz/parking/${encodeURIComponent(sido!)}/${encodeURIComponent(sigungu!)}/${encodeURIComponent(dong!)}/`;
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <Fragment slot="head" set:html={`<script src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=${naverClientId}"></script>`} />
+  <Header currentPath="/parking/" />
+  <main class="max-w-3xl mx-auto px-4 py-8">
+    <ParkingDirectory sido={sido!} sigungu={sigungu!} dong={dong!} items={items} />
+  </main>
+</BaseLayout>

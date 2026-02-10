@@ -4,11 +4,65 @@ import type { APIRoute } from 'astro';
 
 const DATA_GO_KR_API_URL = 'http://api.data.go.kr/openapi/tn_pubr_prkplce_info_api';
 
+// 전체 주차장 데이터 캐시 (서버리스 인스턴스 내 재사용)
+let cachedItems: any[] | null = null;
+let cacheTimestamp = 0;
+const CACHE_TTL = 1000 * 60 * 30; // 30분
+
+async function fetchAllParkingData(serviceKey: string): Promise<any[]> {
+  const now = Date.now();
+  if (cachedItems && (now - cacheTimestamp) < CACHE_TTL) {
+    return cachedItems;
+  }
+
+  const allItems: any[] = [];
+  let pageNo = 1;
+  const numOfRows = 5000;
+
+  while (true) {
+    const params = new URLSearchParams({
+      serviceKey,
+      pageNo: String(pageNo),
+      numOfRows: String(numOfRows),
+      type: 'json',
+    });
+
+    const res = await fetch(`${DATA_GO_KR_API_URL}?${params.toString()}`);
+    if (!res.ok) throw new Error(`공공데이터 API 응답 오류: ${res.status}`);
+
+    const text = await res.text();
+    let data: any;
+    try {
+      data = JSON.parse(text);
+    } catch {
+      throw new Error(`API 응답 파싱 실패: ${text.substring(0, 200)}`);
+    }
+
+    const header = data?.response?.header;
+    if (header?.resultCode !== '00') {
+      throw new Error(`API 오류: ${header?.resultMsg || '알 수 없는 오류'}`);
+    }
+
+    const body = data?.response?.body;
+    const items = body?.items || [];
+    const totalCount = parseInt(body?.totalCount || '0', 10);
+
+    allItems.push(...items);
+
+    if (allItems.length >= totalCount || items.length === 0) break;
+    pageNo++;
+  }
+
+  cachedItems = allItems;
+  cacheTimestamp = now;
+  return allItems;
+}
+
 export const GET: APIRoute = async ({ url }) => {
   const region = url.searchParams.get('region') || '';
-  const filter = url.searchParams.get('filter') || 'all'; // all | free | public
-  const page = url.searchParams.get('page') || '1';
-  const size = url.searchParams.get('size') || '50';
+  const filter = url.searchParams.get('filter') || 'all';
+  const page = parseInt(url.searchParams.get('page') || '1', 10);
+  const size = parseInt(url.searchParams.get('size') || '50', 10);
 
   const serviceKey = import.meta.env.DATA_GO_KR_SERVICE_KEY;
 
@@ -27,42 +81,18 @@ export const GET: APIRoute = async ({ url }) => {
   }
 
   try {
-    // 공공데이터 API 호출 - 도로명주소 기준 검색
-    const params = new URLSearchParams({
-      serviceKey,
-      pageNo: page,
-      numOfRows: size,
-      type: 'json',
+    // 전체 데이터 가져오기 (캐시 활용)
+    const rawItems = await fetchAllParkingData(serviceKey);
+
+    // 사용자 입력 검색어로 주소 자유검색
+    const query = region.trim();
+    const filtered = rawItems.filter((item: any) => {
+      const addr = (item.lnmadr || '') + ' ' + (item.rdnmadr || '');
+      return addr.includes(query);
     });
 
-    const apiUrl = `${DATA_GO_KR_API_URL}?${params.toString()}&rdnmadr=${encodeURIComponent(region)}`;
-    const response = await fetch(apiUrl);
-
-    if (!response.ok) {
-      throw new Error(`공공데이터 API 응답 오류: ${response.status}`);
-    }
-
-    const text = await response.text();
-    let data: any;
-
-    try {
-      data = JSON.parse(text);
-    } catch {
-      // XML이나 에러 메시지가 반환된 경우
-      throw new Error(`API 응답 파싱 실패: ${text.substring(0, 200)}`);
-    }
-
-    const header = data?.response?.header;
-    if (header?.resultCode !== '00') {
-      throw new Error(`API 오류: ${header?.resultMsg || '알 수 없는 오류'}`);
-    }
-
-    const body = data?.response?.body;
-    const rawItems = body?.items || [];
-    const totalCount = parseInt(body?.totalCount || '0', 10);
-
-    // API 응답을 프론트엔드 형식으로 변환
-    let items = rawItems.map((item: any) => ({
+    // 프론트엔드 형식으로 변환
+    let items = filtered.map((item: any) => ({
       name: item.prkplceNm || '',
       type: item.prkplceSe || '',
       category: item.prkplceType || '',
@@ -83,19 +113,25 @@ export const GET: APIRoute = async ({ url }) => {
       updatedAt: item.referenceDate || '',
     }));
 
-    // 클라이언트 필터 적용
+    // 무료/공영 필터 적용
     if (filter === 'free') {
       items = items.filter((lot: any) => lot.isFree);
     } else if (filter === 'public') {
       items = items.filter((lot: any) => lot.type === '공영');
     }
 
+    const totalCount = items.length;
+
+    // 서버 사이드 페이징
+    const startIndex = (page - 1) * size;
+    const pagedItems = items.slice(startIndex, startIndex + size);
+
     return new Response(
       JSON.stringify({
-        items,
+        items: pagedItems,
         totalCount,
-        pageNo: parseInt(page, 10),
-        numOfRows: parseInt(size, 10),
+        pageNo: page,
+        numOfRows: size,
       }),
       {
         status: 200,
