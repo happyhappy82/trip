@@ -65,7 +65,7 @@ const canonical = `https://www.thetripguide.xyz/parking/${encodeURIComponent(sid
       <span>/</span>
       <a href="/parking/" class="hover:text-emerald-600 transition-colors">무료주차장</a>
       <span>/</span>
-      <span class="text-gray-500">{sido}</span>
+      <a href={`/parking/${encodeURIComponent(sido!)}/`} class="hover:text-emerald-600 transition-colors">{sido}</a>
       <span>/</span>
       <span class="text-gray-900 font-semibold">{sigungu}</span>
     </nav>

@@ -303,6 +303,11 @@ const pageUrl = 'https://www.thetripguide.xyz/parking/';
     return '/parking/' + encodeURIComponent(sido) + '/' + encodeURIComponent(sigungu) + '/';
   }
 
+  // === 시도 서브디렉토리 페이지 URL 생성 ===
+  function getSidoPageUrl(sido) {
+    return '/parking/' + encodeURIComponent(sido) + '/';
+  }
+
   // === 자동완성 드롭다운 렌더링 ===
   function renderDropdown(items) {
     if (items.length === 0) {
@@ -565,7 +570,7 @@ const pageUrl = 'https://www.thetripguide.xyz/parking/';
       selectedAutocompleteItem = null;
 
       if (item.type === 'sido') {
-        handleSidoSearch(item.label);
+        window.location.href = getSidoPageUrl(item.label);
       } else if (item.type === 'sigungu') {
         window.location.href = getSigunguPageUrl(item.sido, item.label);
       } else if (item.type === 'dong') {
@@ -578,7 +583,7 @@ const pageUrl = 'https://www.thetripguide.xyz/parking/';
     // 약칭 매핑 시도
     var sidoFull = SIDO_SHORT_TO_FULL[query];
     if (sidoFull) {
-      handleSidoSearch(sidoFull);
+      window.location.href = getSidoPageUrl(sidoFull);
       return;
     }
 
@@ -600,7 +605,7 @@ const pageUrl = 'https://www.thetripguide.xyz/parking/';
 
     if (exactMatch) {
       if (exactMatch.type === 'sido') {
-        handleSidoSearch(exactMatch.label);
+        window.location.href = getSidoPageUrl(exactMatch.label);
       } else if (exactMatch.type === 'sigungu') {
         window.location.href = getSigunguPageUrl(exactMatch.sido, exactMatch.label);
       } else if (exactMatch.type === 'dong') {
@@ -614,7 +619,7 @@ const pageUrl = 'https://www.thetripguide.xyz/parking/';
     if (partialMatches.length > 0) {
       var best = partialMatches[0];
       if (best.type === 'sido') {
-        handleSidoSearch(best.label);
+        window.location.href = getSidoPageUrl(best.label);
       } else if (best.type === 'sigungu') {
         window.location.href = getSigunguPageUrl(best.sido, best.label);
       } else if (best.type === 'dong') {
