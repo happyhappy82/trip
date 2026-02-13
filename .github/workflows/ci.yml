@@ -64,7 +64,7 @@ jobs:
         run: |
           git add -A content/trips/
           git add -A public/notion-images/
-          git add -A public/sitemap.xml
+          git add -A public/sitemap.xml || true
 
           git commit -m "Sync trips from Notion"
 
