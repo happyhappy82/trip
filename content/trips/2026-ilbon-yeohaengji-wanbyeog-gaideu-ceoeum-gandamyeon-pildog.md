@@ -1,5 +1,5 @@
 ---
-title: "2026 일본 여행지 완벽 가이드: 처음 가는 사람을 위한 핵심 정보 정리"
+title: "2026 일본 여행지 완벽 가이드: 처음 간다면 필독"
 date: "2026-02-20T03:33:00.000+00:00"
 excerpt: "처음 일본 여행에서 도시 선택으로 헤매는 시간을 줄이고 싶다면, 일정 길이와 이동 피로 기준으로 여행지를 고르는 실전 기준을 확인해보세요."
 lightColor: "lab(62.926 59.277 -1.573)"
@@ -17,11 +17,17 @@ notionPageId: "30b753eb-c013-81ad-9408-e9a3fca89b55"
 이 글은 2026년 기준으로 처음 가는 여행자에게 실패 확률이 낮은 여행지 선택 기준을 순서대로 정리합니다.
 
 
+![image](/notion-images/2026-ilbon-yeohaengji-wanbyeog-gaideu-ceoeum-gandamyeon-pildog-1771587100833-photo-1480796927426-f609979314bd)
+
+
 ## 3줄 요약
 
 - 여행지는 도시 인지도보다 체류일수와 환승 횟수 기준으로 고르면 만족도가 올라갑니다.
 - 첫 일본 여행은 도쿄, 오사카, 삿포로 중 1개 거점을 정하고 근교를 붙이는 구조가 가장 안정적입니다.
 - 당일투어와 교통패스를 출국 전에 정리하면 현지에서 동선이 흔들리지 않습니다.
+
+![image](/notion-images/2026-ilbon-yeohaengji-wanbyeog-gaideu-ceoeum-gandamyeon-pildog-1771587100939-photo-1490806843957-31f4c9a91c65)
+
 
 ## 핵심 정보 표
 
@@ -90,6 +96,9 @@ notionPageId: "30b753eb-c013-81ad-9408-e9a3fca89b55"
 - 하루 환승 횟수를 2회 이하로 제한했는지 점검
 - 근교 일정은 사전예약 링크와 취소 기준을 저장
 - 도시별 대체 실내 코스를 최소 1개 확보
+
+![image](/notion-images/2026-ilbon-yeohaengji-wanbyeog-gaideu-ceoeum-gandamyeon-pildog-1771587100973-photo-1491884592576-38221bd4314a)
+
 
 ## 여행 전 필수 FAQ
 
