@@ -2,6 +2,8 @@
 title: "2026 이탈리아 여행 준비물 총정리"
 date: "2026-02-03T03:33:00.000+00:00"
 excerpt: "이탈리아 여행을 준비하며 수많은 정보 속에서 길을 잃고 계신가요? 어디서부터 시작해야 할지 막막하고, 불필요한 검색에 소중한 시간을 낭비하고 싶지 않으실 겁니다. 저는 여러분의 귀한 시간을 아껴드리기 위해 이탈리아 여행 준비의 모든 핵심 정보를 직접 파고들어 검증하고,..."
+slug: "2026-italria-yeohaeng-junbimul-congjeongri"
+category: "overseas"
 lightColor: "lab(62.926 59.277 -1.573)"
 darkColor: "lab(80.993 32.329 -7.093)"
 notionPageId: "2f0753eb-c013-8162-b6e8-dbac461b0e93"

@@ -1,12 +1,12 @@
 ---
 title: "서울 뚜벅이 당일치기 여행 추천 코스 4가지는?"
-slug: "seoul-day-trip"
 date: "2026-01-11"
 excerpt: "직접 발로 뛰며 경험한 꿀팁과 알찬 코스들을 모아, 여러분의 여행 계획 시간을 1시간 이상 확! 줄여드릴게요. 이 글 하나로 설렘 가득한 서울 뚜벅이 여행 준비 팁을 말씀드리겠습니다."
+slug: "seoul-ddubeogi-dangilcigi-yeohaeng-cuceon-koseu-4gajineun"
+category: "domestic"
 lightColor: "lab(62.926 59.277 -1.573)"
 darkColor: "lab(80.993 32.329 -7.093)"
 notionPageId: "2e5753eb-c013-812e-a65a-f653e79deec1"
-category: "domestic"
 ---
 
 

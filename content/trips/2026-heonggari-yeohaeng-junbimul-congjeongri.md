@@ -2,6 +2,8 @@
 title: "2026 헝가리 여행 준비물 총정리"
 date: "2026-02-12T03:33:00.000+00:00"
 excerpt: "해외여행을 준비하며 넘쳐나는 정보 속에서 길을 잃고 계신가요? 헝가리 여행을 앞두고 어디서부터 시작해야 할지 막막하고, 수많은 블로그와 커뮤니티 글을 읽느라 귀한 시간을 낭비하고 계실지도 모릅니다. 걱정 마세요. 여러분의 소중한 시간을 절약해 드리기 위해 제가 직접 발..."
+slug: "2026-heonggari-yeohaeng-junbimul-congjeongri"
+category: "overseas"
 lightColor: "lab(62.926 59.277 -1.573)"
 darkColor: "lab(80.993 32.329 -7.093)"
 notionPageId: "2f0753eb-c013-8110-a8a0-cff98fa95805"

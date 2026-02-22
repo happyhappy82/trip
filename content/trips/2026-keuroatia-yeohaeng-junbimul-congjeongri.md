@@ -2,6 +2,8 @@
 title: "2026 크로아티아 여행 준비물 총정리"
 date: "2026-02-13T03:33:00.000+00:00"
 excerpt: "크로아티아 여행을 준비하며 막막한 기분을 느끼셨나요? 수많은 블로그와 정보의 홍수 속에서 어떤 것부터 시작해야 할지, 무엇이 정말 중요한지 헤매고 계실 겁니다. 이 글은 2026년 크로아티아 여행을 위한 여러분의 완벽한 치트키가 될 것입니다. 이제 복잡한 정보 탐색은 ..."
+slug: "2026-keuroatia-yeohaeng-junbimul-congjeongri"
+category: "overseas"
 lightColor: "lab(62.926 59.277 -1.573)"
 darkColor: "lab(80.993 32.329 -7.093)"
 notionPageId: "2f0753eb-c013-8165-9b23-c852ca0e0887"

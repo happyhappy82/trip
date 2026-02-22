@@ -2,6 +2,8 @@
 title: "2026 덴마크 여행 준비물 총정리"
 date: "2026-02-18T03:33:00.000+00:00"
 excerpt: "막막한 2026년 덴마크 여행 준비, 어디서부터 시작해야 할지 고민이셨나요?  여러분의 귀한 시간을 낭비하지 않도록, 제가 직접 발품 팔아 모든 정보를 꼼꼼히 필터링하고 핵심만 쏙쏙 뽑아왔습니다."
+slug: "2026-denmakeu-yeohaeng-junbimul-congjeongri"
+category: "overseas"
 lightColor: "lab(62.926 59.277 -1.573)"
 darkColor: "lab(80.993 32.329 -7.093)"
 notionPageId: "2f0753eb-c013-815b-8bc0-f6a72fb13f09"

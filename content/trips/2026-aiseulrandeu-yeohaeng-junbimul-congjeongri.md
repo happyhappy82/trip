@@ -2,6 +2,8 @@
 title: "2026 아이슬란드 여행 준비물 총정리"
 date: "2026-02-20T03:33:00.000+00:00"
 excerpt: "아이슬란드 여행 준비, 어디서부터 시작해야 할지 막막하셨죠? 수많은 블로그와 정보의 홍수 속에서 어떤 정보가 진짜 필요한지, 내 일정에 맞는 준비물은 무엇인지 찾아 헤매는 데 귀한 시간을 낭비하고 계셨을 겁니다."
+slug: "2026-aiseulrandeu-yeohaeng-junbimul-congjeongri"
+category: "overseas"
 lightColor: "lab(62.926 59.277 -1.573)"
 darkColor: "lab(80.993 32.329 -7.093)"
 notionPageId: "2f0753eb-c013-8193-9f33-d3dea5df28ea"

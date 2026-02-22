@@ -2,6 +2,8 @@
 title: "2026 캐나다 여행 준비물  총정리"
 date: "2026-01-13T03:35:00.000+00:00"
 excerpt: "캐나다 여행 준비를 시작하며 막막함을 느끼셨나요? 인터넷에 넘쳐나는 정보 속에서 무엇부터 챙겨야 할지, 어떤 준비물이 꼭 필요한지 필터링하는 데 시간을 낭비하고 계셨을지도 모릅니다. 걱정 마세요. 제가 수많은 캐나다 여행 정보를 직접 찾아보고, 현지 경험을 바탕으로 꼭..."
+slug: "2026-kaenada-yeohaeng-junbimul-congjeongri"
+category: "overseas"
 lightColor: "lab(62.926 59.277 -1.573)"
 darkColor: "lab(80.993 32.329 -7.093)"
 notionPageId: "2e6753eb-c013-818e-85c0-e35d9c99bbe5"

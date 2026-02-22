@@ -2,6 +2,8 @@
 title: "2026 코스타리카 여행 준비물 총정리"
 date: "2026-01-26T03:35:00.000+00:00"
 excerpt: "코스타리카 여행을 준비하며 수많은 정보의 홍수 속에서 길을 잃고 계신가요? 어떤 것을 먼저 챙겨야 할지, 무엇이 정말 필요한지 막막하게 느껴질 수 있습니다. 여러분의 소중한 시간을 정보 탐색에 낭비하지 않도록, 제가 직접 방대한 자료를 필터링하고 핵심만 꼼꼼하게 정리해..."
+slug: "2026-koseutarika-yeohaeng-junbimul-congjeongri"
+category: "overseas"
 lightColor: "lab(62.926 59.277 -1.573)"
 darkColor: "lab(80.993 32.329 -7.093)"
 notionPageId: "2e6753eb-c013-8100-a63b-ef9123407b36"

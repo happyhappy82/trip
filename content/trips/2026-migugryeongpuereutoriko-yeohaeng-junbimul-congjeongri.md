@@ -2,6 +2,8 @@
 title: "2026 미국령푸에르토리코 여행 준비물 총정리"
 date: "2026-01-29T03:35:00.000+00:00"
 excerpt: "푸에르토리코 여행 준비, 어디서부터 시작해야 할지 막막하시죠? 넘쳐나는 정보 속에서 필요한 것만 쏙쏙 골라내느라 소중한 시간을 낭비하는 경험은 이제 그만하세요. 여러분의 효율적인 여행 준비를 위해, 푸에르토리코 여행에 필요한 모든 정보를 꼼꼼하게 필터링하고 핵심만 정리..."
+slug: "2026-migugryeongpuereutoriko-yeohaeng-junbimul-congjeongri"
+category: "overseas"
 lightColor: "lab(62.926 59.277 -1.573)"
 darkColor: "lab(80.993 32.329 -7.093)"
 notionPageId: "2e6753eb-c013-817c-bb92-e0309ecd19e2"

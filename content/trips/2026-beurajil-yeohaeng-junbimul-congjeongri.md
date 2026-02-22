@@ -2,6 +2,8 @@
 title: "2026 브라질 여행 준비물 총정리"
 date: "2026-01-16T03:35:00.000+00:00"
 excerpt: "브라질 여행을 계획하며 막막함을 느끼는 분들이 많으실 거예요. 방대한 정보의 바다에서 필요한 준비물과 팁을 찾아 헤매는 데 시간을 낭비하는 것은 여행의 즐거움을 시작하기도 전에 지치게 만들죠."
+slug: "2026-beurajil-yeohaeng-junbimul-congjeongri"
+category: "overseas"
 lightColor: "lab(62.926 59.277 -1.573)"
 darkColor: "lab(80.993 32.329 -7.093)"
 notionPageId: "2e6753eb-c013-8188-8ebb-d2c887a1d7f6"

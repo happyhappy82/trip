@@ -2,6 +2,8 @@
 title: "2026 우크라이나 여행 준비물 총정리"
 date: "2026-02-22T03:33:00.000+00:00"
 excerpt: "우크라이나 여행, 정보가 너무 많아 어디서부터 시작해야 할지 막막하셨나요? 무분별한 정보 검색에 귀한 시간을 낭비하는 것은 여행 준비의 가장 큰 적입니다. 이 글은 여러분이 겪을 수 있는 모든 시행착오를 제가 먼저 경험하고, 수많은 정보를 필터링하여 가장 핵심적인 내용..."
+slug: "2026-ukeuraina-yeohaeng-junbimul-congjeongri"
+category: "overseas"
 lightColor: "lab(62.926 59.277 -1.573)"
 darkColor: "lab(80.993 32.329 -7.093)"
 notionPageId: "2f0753eb-c013-817a-82c0-fdda4b6b08ea"

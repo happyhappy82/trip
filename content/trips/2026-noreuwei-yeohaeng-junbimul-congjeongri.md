@@ -2,6 +2,8 @@
 title: "2026 노르웨이 여행 준비물 총정리"
 date: "2026-02-16T03:33:00.000+00:00"
 excerpt: "노르웨이 여행 준비, 어디서부터 시작해야 할지 막막하셨나요? 수많은 정보 속에서 필요한 것만 골라내는 데 시간을 낭비하고 싶지 않으실 겁니다. 저희 팀이 직접 방대한 자료를 분석하고, 현지 정보를 꼼꼼히 필터링했습니다. 여러분이 겪을 불필요한 시행착오를 미리 줄여드리는..."
+slug: "2026-noreuwei-yeohaeng-junbimul-congjeongri"
+category: "overseas"
 lightColor: "lab(62.926 59.277 -1.573)"
 darkColor: "lab(80.993 32.329 -7.093)"
 notionPageId: "2f0753eb-c013-8168-89bd-ce80c4adaa2c"

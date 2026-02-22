@@ -2,6 +2,8 @@
 title: "2026 폴란드 여행 준비물 총정리"
 date: "2026-02-11T03:33:00.000+00:00"
 excerpt: "폴란드 여행을 준비하며 정보의 홍수 속에서 길을 잃으셨나요? 비행기 티켓부터 숙소 예약, 현지에서 필요한 모든 것까지, 막막함은 당연한 감정입니다. 여러분의 귀한 시간을 절약해 드리기 위해 수많은 정보를 직접 필터링하고 핵심만 정리했습니다. 이 글 하나면, 폴란드 여행..."
+slug: "2026-polrandeu-yeohaeng-junbimul-congjeongri"
+category: "overseas"
 lightColor: "lab(62.926 59.277 -1.573)"
 darkColor: "lab(80.993 32.329 -7.093)"
 notionPageId: "2f0753eb-c013-810e-880b-c72bb805a179"

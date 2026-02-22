@@ -2,6 +2,8 @@
 title: "2026 일본 여행 준비물 출국 전 우선순위와 실수 예방 방법"
 date: "2026-02-19T03:33:00.000+00:00"
 excerpt: "2026년 일본 여행 준비물을 우선순위 기준으로 정리한 실전 체크리스트. 여권·결제·통신·상비약·계절별 의류까지 출국 전 실수 방지 포인트를 한 번에 확인할 수 있습니다."
+slug: "2026-japan-travel-checklist-priority"
+category: "overseas"
 lightColor: "lab(62.926 59.277 -1.573)"
 darkColor: "lab(80.993 32.329 -7.093)"
 notionPageId: "30b753eb-c013-813c-b751-e3ac95f05531"

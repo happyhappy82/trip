@@ -2,6 +2,8 @@
 title: "2026 일본 여행 경비 가이드: 일정별 예산표와 지출 줄이는 방법"
 date: "2026-02-22T03:33:00.000+00:00"
 excerpt: "항공권부터 교통, 통신, 식비까지 일본 여행 경비를 일정 길이별로 정리했습니다. 지출이 커지는 구간을 미리 알고 예산을 안정적으로 설계해보세요."
+slug: "2026-japan-travel-budget-guide"
+category: "overseas"
 lightColor: "lab(62.926 59.277 -1.573)"
 darkColor: "lab(80.993 32.329 -7.093)"
 notionPageId: "30b753eb-c013-8129-b857-d14d86d3d9a0"
@@ -17,7 +19,7 @@ notionPageId: "30b753eb-c013-8129-b857-d14d86d3d9a0"
 이 글은 일정 길이별 예산 기준과 실전 절약 포인트를 함께 정리한 경비 설계 가이드입니다.
 
 
-![image](/notion-images/2026-ilbon-yeohaeng-gyeongbi-gaideu-iljeongbyeol-yesanpyowa-jicul-julineun-bangbeob-1771737257082-photo-1499419819507-77191b8ec46e)
+![image](/notion-images/2026-japan-travel-budget-guide-1771768835381-photo-1499419819507-77191b8ec46e)
 
 
 ## 3줄 요약
@@ -26,7 +28,7 @@ notionPageId: "30b753eb-c013-8129-b857-d14d86d3d9a0"
 - 통신과 교통을 출국 전에 확정하면 현지 즉흥 지출을 줄일 수 있습니다.
 - 예산은 하루 평균보다 도착일과 장거리 이동일에 집중 배분해야 안정적입니다.
 
-![image](/notion-images/2026-ilbon-yeohaeng-gyeongbi-gaideu-iljeongbyeol-yesanpyowa-jicul-julineun-bangbeob-1771737257336-photo-1505069446780-4ef442b5207f)
+![image](/notion-images/2026-japan-travel-budget-guide-1771768835513-photo-1505069446780-4ef442b5207f)
 
 
 ## 핵심 정보 표
@@ -94,7 +96,7 @@ notionPageId: "30b753eb-c013-8129-b857-d14d86d3d9a0"
 - 장거리 이동일은 식사 예산과 대기 시간을 별도 반영
 - 결제수단을 카드 2장과 소액 현금으로 분산
 
-![image](/notion-images/2026-ilbon-yeohaeng-gyeongbi-gaideu-iljeongbyeol-yesanpyowa-jicul-julineun-bangbeob-1771737257404-photo-1522177743530-6dcab6baa5f5)
+![image](/notion-images/2026-japan-travel-budget-guide-1771768835590-photo-1522177743530-6dcab6baa5f5)
 
 
 ## 여행 전 필수 FAQ

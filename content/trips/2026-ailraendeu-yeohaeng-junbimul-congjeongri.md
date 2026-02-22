@@ -2,6 +2,8 @@
 title: "2026 아일랜드 여행 준비물 총정리 "
 date: "2026-01-31T03:33:00.000+00:00"
 excerpt: "아일랜드 여행을 계획하며  불필요한 정보에 시간을 낭비하는 것은 누구에게나 피하고 싶은 일입니다. 저는 여러분의 소중한 시간을 절약해 드리기 위해, 아일랜드 여행을 위한 핵심 정보만을 압축하고 정리했습니다. 이 가이드 하나면 더 이상 헤맬 필요 없이, 바로 짐만 싸서 ..."
+slug: "2026-ailraendeu-yeohaeng-junbimul-congjeongri"
+category: "overseas"
 lightColor: "lab(62.926 59.277 -1.573)"
 darkColor: "lab(80.993 32.329 -7.093)"
 notionPageId: "2e7753eb-c013-81e6-9477-ca1faa595d4d"

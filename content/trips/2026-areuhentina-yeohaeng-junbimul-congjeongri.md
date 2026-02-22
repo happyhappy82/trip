@@ -2,6 +2,8 @@
 title: "2026 아르헨티나 여행 준비물 총정리"
 date: "2026-01-17T03:35:00.000+00:00"
 excerpt: "아르헨티나 여행을 계획하며 방대한 정보 속에서 헤매고 계신가요? 쏟아지는 자료들 사이에서 무엇부터 준비해야 할지 막막하고, 소중한 시간을 낭비하고 싶지 않은 마음, 공감됩니다. 이 글만 보고, 아르헨티나 여행 준비하세요!"
+slug: "2026-areuhentina-yeohaeng-junbimul-congjeongri"
+category: "overseas"
 lightColor: "lab(62.926 59.277 -1.573)"
 darkColor: "lab(80.993 32.329 -7.093)"
 notionPageId: "2e6753eb-c013-81e7-96d2-fcb6dfa537fc"

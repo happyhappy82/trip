@@ -2,6 +2,8 @@
 title: "2026 미국 여행 준비물 총정리"
 date: "2026-01-13T03:35:00.000+00:00"
 excerpt: "미국 여행을 계획하며 방대한 정보 속에서 길을 잃고 계신가요? 어떤 것을 챙겨야 할지, 무엇부터 준비해야 할지 막막한 마음에 귀한 시간을 낭비하고 계실 수도 있습니다. 걱정 마세요. 여러분의 시간과 노력을 아껴줄 핵심 정보만을 꼼꼼하게 필터링했습니다. 이 글 하나로 더..."
+slug: "2026-migug-yeohaeng-junbimul-congjeongri"
+category: "overseas"
 lightColor: "lab(62.926 59.277 -1.573)"
 darkColor: "lab(80.993 32.329 -7.093)"
 notionPageId: "2e7753eb-c013-80c9-8663-c971b58fee0e"

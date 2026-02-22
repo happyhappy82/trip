@@ -2,6 +2,8 @@
 title: "2026 핀란드 여행 준비물 총정리"
 date: "2026-02-19T03:33:00.000+00:00"
 excerpt: "핀란드 여행을 계획하며 방대한 정보 속에서 헤매고 계신가요? 어떤 블로그는 이렇다 하고, 저 유튜브는 또 다른 이야기를 해서 결국 무엇부터 준비해야 할지 막막한 경험, 아마 한두 번이 아닐 겁니다. 여러분의 소중한 시간을 낭비하지 않도록, 제가 직접 여러 정보를 취합하..."
+slug: "2026-pinrandeu-yeohaeng-junbimul-congjeongri"
+category: "overseas"
 lightColor: "lab(62.926 59.277 -1.573)"
 darkColor: "lab(80.993 32.329 -7.093)"
 notionPageId: "2f0753eb-c013-819b-88ef-c30fd8d440a3"

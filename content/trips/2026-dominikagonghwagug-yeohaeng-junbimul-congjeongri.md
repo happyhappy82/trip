@@ -2,6 +2,8 @@
 title: "2026 도미니카공화국 여행 준비물 총정리"
 date: "2026-01-24T03:35:00.000+00:00"
 excerpt: "도미니카공화국 여행, 어디서부터 시작해야 할지 막막하고 넘쳐나는 정보 속에서 길을 잃으신 경험이 있으신가요? 수많은 블로그와 웹사이트를 오가며 소중한 시간을 낭비하는 일, 이제 그만하세요. 여러분의 효율적인 여행 준비를 위해 제가 직접 수십 개의 자료를 분석하고, 현지..."
+slug: "2026-dominikagonghwagug-yeohaeng-junbimul-congjeongri"
+category: "overseas"
 lightColor: "lab(62.926 59.277 -1.573)"
 darkColor: "lab(80.993 32.329 -7.093)"
 notionPageId: "2e6753eb-c013-819d-8f07-c3dd4463b5e0"

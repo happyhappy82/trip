@@ -2,6 +2,8 @@
 title: "2026 영국 여행 준비물 총정리"
 date: "2026-01-30T03:33:00.000+00:00"
 excerpt: "영국 여행을 계획시는데 답답하시죠? 어떤 것부터 준비해야 할지 막막하고, 불필요한 정보 탐색에 귀한 시간을 낭비하고 싶지 않으실 겁니다. 저는 여러분 대신 수많은 정보를 필터링하고 핵심만 쏙쏙 뽑아냈습니다. 이제 복잡한 준비 과정은 제가 정리해 드릴 테니, 여러분은 이..."
+slug: "2026-yeonggug-yeohaeng-junbimul-congjeongri"
+category: "overseas"
 lightColor: "lab(62.926 59.277 -1.573)"
 darkColor: "lab(80.993 32.329 -7.093)"
 notionPageId: "2e7753eb-c013-812b-8e6b-dd49715a0323"

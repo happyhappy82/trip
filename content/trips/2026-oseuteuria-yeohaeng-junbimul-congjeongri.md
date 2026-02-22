@@ -2,6 +2,8 @@
 title: "2026 오스트리아 여행 준비물 총정리"
 date: "2026-02-09T03:33:00.000+00:00"
 excerpt: "오스트리아 여행을 계획하며 어디서부터 시작해야 할지 막막하고, 수많은 정보 속에서 헤매셨나요? 방대한 온라인 정보를 일일이 찾아보고 필터링하는 데 귀한 시간을 낭비하고 싶지 않으실 거예요. 제가 여러분 대신 수많은 자료를 검토하고 핵심만 쏙쏙 뽑아냈습니다. 이 글 하나..."
+slug: "2026-oseuteuria-yeohaeng-junbimul-congjeongri"
+category: "overseas"
 lightColor: "lab(62.926 59.277 -1.573)"
 darkColor: "lab(80.993 32.329 -7.093)"
 notionPageId: "2f0753eb-c013-8186-96a5-fe17e10a960f"

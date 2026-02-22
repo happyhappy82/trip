@@ -2,6 +2,8 @@
 title: "2026 에콰도르 여행 준비물 총정리"
 date: "2026-01-21T03:35:00.000+00:00"
 excerpt: "에콰도르 여행을 계획하며 방대한 정보 속에서 헤매고 계신가요? 어디서부터 시작해야 할지 막막하고, 수많은 후기와 블로그 글을 일일이 찾아보는 데 시간을 낭비하고 싶지 않으실 겁니다. 걱정하지 마세요. 에콰도르 여행을 위한 핵심 정보를 제가 직접 필터링하고 정리했습니다...."
+slug: "2026-ekwadoreu-yeohaeng-junbimul-congjeongri"
+category: "overseas"
 lightColor: "lab(62.926 59.277 -1.573)"
 darkColor: "lab(80.993 32.329 -7.093)"
 notionPageId: "2e6753eb-c013-8108-b8ac-effa89dae794"

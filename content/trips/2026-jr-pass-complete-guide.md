@@ -2,13 +2,15 @@
 title: "2026 jr패스 완벽 가이드: 처음 가는 사람을 위한 핵심 정보 정리"
 date: "2026-02-21T03:33:00.000+00:00"
 excerpt: "JR패스가 무조건 이득이라는 오해를 줄이고, 일정 형태에 맞게 손익을 계산하는 기준을 정리했습니다. 지역패스 선택 실수 전에 먼저 확인하세요."
+slug: "2026-jr-pass-complete-guide"
+category: "overseas"
 lightColor: "lab(62.926 59.277 -1.573)"
 darkColor: "lab(80.993 32.329 -7.093)"
 notionPageId: "30b753eb-c013-810f-aafa-ced68982d4b5"
 ---
 
 
-![dl=julien-vmZt2Nx9qO0-unsplash.jpg](/notion-images/2026-jrpaeseu-wanbyeog-gaideu-ceoeum-ganeun-sarameul-wihan-haegsim-jeongbo-jeongri-1771650223376-photo-1739373857342-fb129b7c1da8)
+![dl=julien-vmZt2Nx9qO0-unsplash.jpg](/notion-images/2026-jr-pass-complete-guide-1771768860612-photo-1739373857342-fb129b7c1da8)
 
 
 JR패스는 일본 여행의 필수템처럼 보이지만, 실제로는 일정 구조에 따라 이득과 손해가 크게 갈립니다.
@@ -46,7 +48,7 @@ JR패스는 일본 여행의 필수템처럼 보이지만, 실제로는 일정 �
 또한 패스는 시간 압박을 만듭니다. 사용기간 안에 많이 타야 이득이라는 심리가 생기면 여행 자체가 이동 중심으로 바뀌고, 체류 경험이 얕아질 수 있습니다.
 
 
-![dl=zin-yoon-Zsktqoylrts-unsplash.jpg](/notion-images/2026-jrpaeseu-wanbyeog-gaideu-ceoeum-ganeun-sarameul-wihan-haegsim-jeongbo-jeongri-1771650223663-photo-1670475477852-d738131155ba)
+![dl=zin-yoon-Zsktqoylrts-unsplash.jpg](/notion-images/2026-jr-pass-complete-guide-1771768860733-photo-1670475477852-d738131155ba)
 
 
 ### 이동거리보다 장거리 구간 횟수가 핵심이다
@@ -70,7 +72,7 @@ JR패스는 일본 여행의 필수템처럼 보이지만, 실제로는 일정 �
 ## 지역별 실전 선택법
 
 
-![dl=night-wish-1-00XLJJypw-unsplash.jpg](/notion-images/2026-jrpaeseu-wanbyeog-gaideu-ceoeum-ganeun-sarameul-wihan-haegsim-jeongbo-jeongri-1771650223697-photo-1545588381-7ffc0635d232)
+![dl=night-wish-1-00XLJJypw-unsplash.jpg](/notion-images/2026-jr-pass-complete-guide-1771768860802-photo-1545588381-7ffc0635d232)
 
 
 ### 간사이 여행

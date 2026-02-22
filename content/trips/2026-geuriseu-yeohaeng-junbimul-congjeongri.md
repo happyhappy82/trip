@@ -2,6 +2,8 @@
 title: "2026 그리스 여행 준비물 총정리"
 date: "2026-02-14T03:33:00.000+00:00"
 excerpt: "그리스 여행을 계획하며 넘쳐나는 정보 속에서 무엇부터 시작해야 할지 막막하셨을 겁니다. 어떤 준비물을 챙겨야 할지, 현지에서는 무엇을 조심해야 할지, 검색창을 떠도는 시간은 아깝기만 하죠. 제가 여러분 대신 수많은 정보를 필터링하고 핵심만 요약했습니다. 이 글 하나로 ..."
+slug: "2026-geuriseu-yeohaeng-junbimul-congjeongri"
+category: "overseas"
 lightColor: "lab(62.926 59.277 -1.573)"
 darkColor: "lab(80.993 32.329 -7.093)"
 notionPageId: "2f0753eb-c013-8160-9790-dcd0009dfdf5"

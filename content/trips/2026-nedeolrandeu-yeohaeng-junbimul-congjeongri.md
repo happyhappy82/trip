@@ -2,6 +2,8 @@
 title: "2026 네덜란드 여행 준비물 총정리"
 date: "2026-02-06T03:33:00.000+00:00"
 excerpt: "네덜란드 여행 준비, 어디서부터 시작해야 할지 막막하셨죠? 수많은 블로그와 웹사이트를 오가며 시간을 낭비하는 일은 이제 그만하세요. 제가 직접 네덜란드 여행에 필요한 모든 정보를 꼼꼼하게 필터링하고 핵심만 쏙쏙 뽑아왔습니다. 이 글 하나면 더 이상 검색창을 헤맬 필요 ..."
+slug: "2026-nedeolrandeu-yeohaeng-junbimul-congjeongri"
+category: "overseas"
 lightColor: "lab(62.926 59.277 -1.573)"
 darkColor: "lab(80.993 32.329 -7.093)"
 notionPageId: "2f0753eb-c013-816a-9033-db81841c36ca"

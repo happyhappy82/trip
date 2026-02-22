@@ -2,6 +2,8 @@
 title: "2026 스웨덴 여행 준비물 총정리"
 date: "2026-02-17T03:33:00.000+00:00"
 excerpt: "끝없이 쏟아지는 여행 정보 속에서 무엇부터 시작해야 할지 막막하고, 수많은 블로그를 헤매며 시간을 낭비하셨나요? 2026년 스웨덴 여행을 계획 중인 여러분의 소중한 시간을 아껴드리고자 합니다. 이 글은 제가 직접 여러 자료를 탐색하고 핵심만 필터링한 '스웨덴 여행 준비..."
+slug: "2026-seuweden-yeohaeng-junbimul-congjeongri"
+category: "overseas"
 lightColor: "lab(62.926 59.277 -1.573)"
 darkColor: "lab(80.993 32.329 -7.093)"
 notionPageId: "2f0753eb-c013-81ed-9050-d12319b74dc0"
