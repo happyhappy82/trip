@@ -5,6 +5,15 @@ on:
     - cron: '0 4 * * *'  # 매일 오후 1시 (KST)
     - cron: '0 9 * * *'  # 매일 오후 6시 (KST)
   workflow_dispatch:
+    inputs:
+      resync_all:
+        description: 'Resync all existing posts'
+        required: false
+        default: 'false'
+        type: choice
+        options:
+          - 'false'
+          - 'true'
   repository_dispatch:
     types: [notion-webhook]
 
@@ -39,6 +48,7 @@ jobs:
           SYNC_ACTION: ${{ github.event.client_payload.action }}
           SYNC_PAGE_ID: ${{ github.event.client_payload.page_id }}
           TRIGGER_TYPE: ${{ github.event_name }}
+          RESYNC_ALL: ${{ github.event.inputs.resync_all || 'false' }}
         run: node scripts/sync-notion.cjs
 
       - name: Check for changes

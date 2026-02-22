@@ -69,6 +69,9 @@ async function getPageProperties(pageId) {
     return textArray.map(item => item.plain_text || '').join('');
   };
 
+  const notionSlug = getFullText(properties.Slug?.rich_text) || '';
+  const category = properties.Category?.select?.name || '';
+
   return {
     pageId: page.id,
     title: getFullText(properties.Title?.title) || '',
@@ -77,6 +80,8 @@ async function getPageProperties(pageId) {
     lightColor: getFullText(properties.LightColor?.rich_text) || 'lab(62.926 59.277 -1.573)',
     darkColor: getFullText(properties.DarkColor?.rich_text) || 'lab(80.993 32.329 -7.093)',
     status: status,
+    slug: notionSlug,
+    category: category,
   };
 }
 
@@ -138,9 +143,12 @@ async function processPage(pageId, isNew = false) {
     return null;
   }
 
-  const slug = generateSlug(props.title);
+  const slug = props.slug || generateSlug(props.title);
   console.log(`\n📝 Processing: ${props.title} (${slug})`);
-  console.log(`   Status: ${props.status}, Date: ${props.date}`);
+  console.log(`   Status: ${props.status}, Date: ${props.date}, Category: ${props.category}`);
+  if (props.slug) {
+    console.log(`   Using Notion slug: ${props.slug}`);
+  }
 
   const existingFile = findExistingFileByPageId(pageId);
   if (existingFile.exists && existingFile.slug !== slug) {
@@ -189,10 +197,18 @@ async function processPage(pageId, isNew = false) {
     }
   }
 
+  const categoryMap = {
+    '해외여행': 'overseas',
+    '국내여행': 'domestic',
+  };
+  const categoryValue = categoryMap[props.category] || 'overseas';
+
   const frontmatter = `---
 title: "${props.title}"
 date: "${props.date}"
 excerpt: "${excerpt || ''}"
+slug: "${slug}"
+category: "${categoryValue}"
 lightColor: "${props.lightColor}"
 darkColor: "${props.darkColor}"
 notionPageId: "${props.pageId}"
@@ -250,13 +266,15 @@ async function scheduledSync() {
 
   let newPublishedSlugs = [];
 
+  const resyncAll = process.env.RESYNC_ALL === 'true';
+
   for (const page of response.results) {
     const pageId = page.id;
     const props = await getPageProperties(pageId);
 
     if (!props.title) continue;
 
-    const slug = generateSlug(props.title);
+    const slug = props.slug || generateSlug(props.title);
     const existingFile = findExistingFileByPageId(pageId);
 
     if (!existingFile.exists) {
@@ -265,6 +283,9 @@ async function scheduledSync() {
       if (publishedSlug) {
         newPublishedSlugs.push(publishedSlug);
       }
+    } else if (resyncAll) {
+      console.log(`\n🔄 Resyncing: ${slug}`);
+      await processPage(pageId, false);
     } else {
       console.log(`\nℹ️  Already published: ${slug} (skipping)`);
     }
@@ -302,7 +323,7 @@ async function webhookSync() {
     return false;
   }
 
-  const slug = generateSlug(props.title);
+  const slug = props.slug || generateSlug(props.title);
   const status = props.status;
 
   console.log(`   Title: ${props.title}`);
