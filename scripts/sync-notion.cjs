@@ -143,16 +143,25 @@ async function processPage(pageId, isNew = false) {
     return null;
   }
 
-  const slug = props.slug || generateSlug(props.title);
-  console.log(`\n📝 Processing: ${props.title} (${slug})`);
-  console.log(`   Status: ${props.status}, Date: ${props.date}, Category: ${props.category}`);
+  const existingFile = findExistingFileByPageId(pageId);
+
+  // Notion Slug 우선, 없으면 기존 파일 slug 유지, 둘 다 없으면 transliterate
+  let slug;
   if (props.slug) {
+    slug = props.slug;
     console.log(`   Using Notion slug: ${props.slug}`);
+  } else if (existingFile.exists) {
+    slug = existingFile.slug;
+    console.log(`   Keeping existing slug: ${slug}`);
+  } else {
+    slug = generateSlug(props.title);
   }
 
-  const existingFile = findExistingFileByPageId(pageId);
+  console.log(`\n📝 Processing: ${props.title} (${slug})`);
+  console.log(`   Status: ${props.status}, Date: ${props.date}, Category: ${props.category}`);
+
   if (existingFile.exists && existingFile.slug !== slug) {
-    console.log(`  🔄 Title changed, removing old file: ${existingFile.fileName}`);
+    console.log(`  🔄 Slug changed, removing old file: ${existingFile.fileName}`);
     fs.unlinkSync(existingFile.filePath);
   }
 
